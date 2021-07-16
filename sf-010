@@ -1,0 +1,50 @@
+//------------------------------------------------
+//--- 010 Editor v11.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+FSeek(0x200);
+typedef struct fileEntry {
+    uint flashOffset;
+    uint rawSize;
+    uint originalSize;
+    ushort entryLen;
+    ushort flags;
+    ushort nameLen;
+    ushort extraLen;
+    char name[nameLen];
+    char pad[entryLen-nameLen-20];
+} ;
+
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
+fileEntry test;
