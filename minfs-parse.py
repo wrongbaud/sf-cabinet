@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import ctypes
 import logging
 import struct
