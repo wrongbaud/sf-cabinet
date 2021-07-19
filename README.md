@@ -1,6 +1,6 @@
 # sf-cabinet
 
-Tools and utilities for modifying SF2 Cabinets
+Tools and utilities for modifying [SF2 Cabinets](https://www.myarcadegaming.com/products/street-fighter-2-champion-edition)
 
 ## What
 
