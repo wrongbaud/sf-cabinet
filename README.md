@@ -33,9 +33,10 @@ Current capabilties include:
 
 ## Cabinet Specs
 
-Architecture: ARM (Allwinner SoC)
-Operating System: EPOS
-Filesystem(s): MINFS,FAT12
-OSS in Use: MAME
+* Architecture: ARM (Allwinner SoC)
+* Operating System: EPOS
+   * Some tools and utiltiies can be found [here](https://epos.lisha.ufsc.br/EPOS+User+Guide)
+* Filesystem(s): MINFS,FAT12
+* OSS in Use: MAME
 
 
