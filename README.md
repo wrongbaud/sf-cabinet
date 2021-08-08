@@ -36,7 +36,8 @@ Current capabilties include:
 * Architecture: ARM (Allwinner SoC)
 * Operating System: EPOS
    * Some tools and utiltiies can be found [here](https://epos.lisha.ufsc.br/EPOS+User+Guide)
+   * [Some API documentation](https://usermanual.wiki/Document/SW1103REF005MELIS20PROGRAM20GUIDEModule.77258713.pdf)
 * Filesystem(s): MINFS,FAT12
-* OSS in Use: MAME
+* OSS in Use: FBA 
 
 
