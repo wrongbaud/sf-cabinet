@@ -1,0 +1,69 @@
+digraph {
+	rankdir=LR;
+	node [shape=plaintext];
+	subgraph cluster__minfs {
+		label="Minfs";
+		graph[style=dotted];
+
+		minfs__seq [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+			<TR><TD BGCOLOR="#E0FFE0">pos</TD><TD BGCOLOR="#E0FFE0">size</TD><TD BGCOLOR="#E0FFE0">type</TD><TD BGCOLOR="#E0FFE0">id</TD></TR>
+			<TR><TD PORT="minfs_header_pos">0</TD><TD PORT="minfs_header_size">32</TD><TD>MinfsTableHeader</TD><TD PORT="minfs_header_type">minfs_header</TD></TR>
+			<TR><TD PORT="minfs_pad_pos">32</TD><TD PORT="minfs_pad_size">(minfs_header.tree_offset - 32)</TD><TD></TD><TD PORT="minfs_pad_type">minfs_pad</TD></TR>
+			<TR><TD PORT="minfs_file_table_pos">...</TD><TD PORT="minfs_file_table_size">...</TD><TD>MinfsTableEntry</TD><TD PORT="minfs_file_table_type">minfs_file_table</TD></TR>
+			<TR><TD COLSPAN="4" PORT="minfs_file_table__repeat">repeat minfs_header.tree_entries times</TD></TR>
+		</TABLE>>];
+		subgraph cluster__minfs_table_header {
+			label="Minfs::MinfsTableHeader";
+			graph[style=dotted];
+
+			minfs_table_header__seq [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+				<TR><TD BGCOLOR="#E0FFE0">pos</TD><TD BGCOLOR="#E0FFE0">size</TD><TD BGCOLOR="#E0FFE0">type</TD><TD BGCOLOR="#E0FFE0">id</TD></TR>
+				<TR><TD PORT="magic_pos">0</TD><TD PORT="magic_size">6</TD><TD></TD><TD PORT="magic_type">magic</TD></TR>
+				<TR><TD PORT="version_pos">6</TD><TD PORT="version_size">2</TD><TD>u2le</TD><TD PORT="version_type">version</TD></TR>
+				<TR><TD PORT="tree_offset_pos">8</TD><TD PORT="tree_offset_size">4</TD><TD>u4le</TD><TD PORT="tree_offset_type">tree_offset</TD></TR>
+				<TR><TD PORT="root_size_pos">12</TD><TD PORT="root_size_size">4</TD><TD>u4le</TD><TD PORT="root_size_type">root_size</TD></TR>
+				<TR><TD PORT="tree_entries_pos">16</TD><TD PORT="tree_entries_size">4</TD><TD>u4le</TD><TD PORT="tree_entries_type">tree_entries</TD></TR>
+				<TR><TD PORT="tree_size_pos">20</TD><TD PORT="tree_size_size">4</TD><TD>u4le</TD><TD PORT="tree_size_type">tree_size</TD></TR>
+				<TR><TD PORT="fdata_length_pos">24</TD><TD PORT="fdata_length_size">4</TD><TD>u4le</TD><TD PORT="fdata_length_type">fdata_length</TD></TR>
+				<TR><TD PORT="image_size_pos">28</TD><TD PORT="image_size_size">4</TD><TD>u4le</TD><TD PORT="image_size_type">image_size</TD></TR>
+			</TABLE>>];
+		}
+		subgraph cluster__minfs_table_entry {
+			label="Minfs::MinfsTableEntry";
+			graph[style=dotted];
+
+			minfs_table_entry__seq [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+				<TR><TD BGCOLOR="#E0FFE0">pos</TD><TD BGCOLOR="#E0FFE0">size</TD><TD BGCOLOR="#E0FFE0">type</TD><TD BGCOLOR="#E0FFE0">id</TD></TR>
+				<TR><TD PORT="flash_offset_pos">0</TD><TD PORT="flash_offset_size">4</TD><TD>u4le</TD><TD PORT="flash_offset_type">flash_offset</TD></TR>
+				<TR><TD PORT="raw_size_pos">4</TD><TD PORT="raw_size_size">4</TD><TD>u4le</TD><TD PORT="raw_size_type">raw_size</TD></TR>
+				<TR><TD PORT="original_size_pos">8</TD><TD PORT="original_size_size">4</TD><TD>u4le</TD><TD PORT="original_size_type">original_size</TD></TR>
+				<TR><TD PORT="entry_length_pos">12</TD><TD PORT="entry_length_size">2</TD><TD>u2le</TD><TD PORT="entry_length_type">entry_length</TD></TR>
+				<TR><TD PORT="flags_pos">14</TD><TD PORT="flags_size">2</TD><TD>u2le→FileType</TD><TD PORT="flags_type">flags</TD></TR>
+				<TR><TD PORT="name_length_pos">16</TD><TD PORT="name_length_size">2</TD><TD>u2le</TD><TD PORT="name_length_type">name_length</TD></TR>
+				<TR><TD PORT="extra_length_pos">18</TD><TD PORT="extra_length_size">2</TD><TD>u2le</TD><TD PORT="extra_length_type">extra_length</TD></TR>
+				<TR><TD PORT="name_pos">20</TD><TD PORT="name_size">name_length</TD><TD>str(UTF-8)</TD><TD PORT="name_type">name</TD></TR>
+				<TR><TD PORT="pad_pos">...</TD><TD PORT="pad_size">((entry_length - name_length) - 20)</TD><TD></TD><TD PORT="pad_type">pad</TD></TR>
+			</TABLE>>];
+			minfs_table_entry__inst__directory_contents [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+				<TR><TD BGCOLOR="#E0FFE0">pos</TD><TD BGCOLOR="#E0FFE0">size</TD><TD BGCOLOR="#E0FFE0">type</TD><TD BGCOLOR="#E0FFE0">id</TD></TR>
+				<TR><TD PORT="directory_contents_pos">flash_offset</TD><TD PORT="directory_contents_size">raw_size</TD><TD>MinfsTableEntry</TD><TD PORT="directory_contents_type">directory_contents</TD></TR>
+			</TABLE>>];
+			minfs_table_entry__inst__file_data [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+				<TR><TD BGCOLOR="#E0FFE0">pos</TD><TD BGCOLOR="#E0FFE0">size</TD><TD BGCOLOR="#E0FFE0">type</TD><TD BGCOLOR="#E0FFE0">id</TD></TR>
+				<TR><TD PORT="file_data_pos">flash_offset</TD><TD PORT="file_data_size">raw_size</TD><TD></TD><TD PORT="file_data_type">file_data</TD></TR>
+			</TABLE>>];
+		}
+	}
+	minfs__seq:minfs_header_type -> minfs_table_header__seq [style=bold];
+	minfs_table_header__seq:tree_offset_type -> minfs__seq:minfs_pad_size [color="#404040"];
+	minfs__seq:minfs_file_table_type -> minfs_table_entry__seq [style=bold];
+	minfs_table_header__seq:tree_entries_type -> minfs__seq:minfs_file_table__repeat [color="#404040"];
+	minfs_table_entry__seq:name_length_type -> minfs_table_entry__seq:name_size [color="#404040"];
+	minfs_table_entry__seq:entry_length_type -> minfs_table_entry__seq:pad_size [color="#404040"];
+	minfs_table_entry__seq:name_length_type -> minfs_table_entry__seq:pad_size [color="#404040"];
+	minfs_table_entry__seq:flash_offset_type -> minfs_table_entry__inst__directory_contents:directory_contents_pos [color="#404040"];
+	minfs_table_entry__seq:raw_size_type -> minfs_table_entry__inst__directory_contents:directory_contents_size [color="#404040"];
+	minfs_table_entry__inst__directory_contents:directory_contents_type -> minfs_table_entry__seq [style=bold];
+	minfs_table_entry__seq:flash_offset_type -> minfs_table_entry__inst__file_data:file_data_pos [color="#404040"];
+	minfs_table_entry__seq:raw_size_type -> minfs_table_entry__inst__file_data:file_data_size [color="#404040"];
+}
