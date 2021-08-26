@@ -1,0 +1,1366 @@
+<!DOCTYPE html><html lang="ANG"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-tap-highlight-color:transparent;background-color:transparent;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTQwIDcwSDIwVjUwbTIwIDBMMjAgNzBtNDAtNDBoMjB2MjBtLTIwIDAgMjAtMjAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTIwIDUwaDIwdjIwbS0yMCAwIDIwLTIwbTQwIDBINjBWMzBtMjAgMEw2MCA1MCIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS13aWR0aDo1cHh9PC9zdHlsZT48L2RlZnM+PHBhdGggY2xhc3M9ImEiIGQ9Ik0yMCA2MGgtNWE1IDUgMCAwIDEtNS01VjIwYTUgNSAwIDAgMSA1LTVoNjBhNSA1IDAgMCAxIDUgNXY1TTMwIDg1aDYwIi8+PHJlY3QgeD0iMzAiIHk9IjM1IiB3aWR0aD0iNjAiIGhlaWdodD0iNDAiIHJ4PSI1IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiLz48cmVjdCBjbGFzcz0iYSIgeD0iMzAiIHk9IjM1IiB3aWR0aD0iNjAiIGhlaWdodD0iNDAiIHJ4PSI1Ii8+PHBhdGggY2xhc3M9ImEiIGQ9Ik00MCA1MGg0ME00MCA2MGgzMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{-webkit-animation-name:__bespoke_marp__!important;animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{bottom:0;left:0;position:absolute;right:0;top:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:rgba(0,0,0,.65);border-radius:7px;bottom:50px;color:#fff;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:transparent}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template-areas:"current next" "current note" "info    note";grid-template-columns:2fr 1fr;grid-template-rows:minmax(140px,1fr) 2fr 3em;height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:transparent;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{word-wrap:break-word;scrollbar-width:thin;scrollbar-color:hsla(0,0%,93.3%,.5) transparent;box-sizing:border-box;font-size:1.1em;height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:transparent}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:hsla(0,0%,93.3%,.5);border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>div#p>svg>foreignObject>section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center}div#p>svg>foreignObject>section:after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#p>svg>foreignObject>section:not([data-marpit-pagination]):after{display:none}/* Normalization */div#p>svg>foreignObject>section h1{font-size:2em;margin:0.67em 0}div#p>svg>foreignObject>section video::-webkit-media-controls{will-change:transform}@page{size:1280px 720px;margin:0}@media print{body,html{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#p>svg>foreignObject>section{page-break-before:always;break-before:page}div#p>svg>foreignObject>section,div#p>svg>foreignObject>section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;transition:none!important}div#p>svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#p>svg>foreignObject>section svg[data-marp-fitting=svg]{display:block;height:auto;width:100%}@supports (-ms-ime-align:auto){div#p>svg>foreignObject>section svg[data-marp-fitting=svg]{position:static}}div#p>svg>foreignObject>section svg[data-marp-fitting=svg].__reflow__{content:""}@supports (-ms-ime-align:auto){div#p>svg>foreignObject>section svg[data-marp-fitting=svg].__reflow__{position:relative}}div#p>svg>foreignObject>section [data-marp-fitting-svg-content]{display:table;white-space:nowrap;width:-webkit-max-content;width:-moz-max-content;width:max-content}div#p>svg>foreignObject>section [data-marp-fitting-svg-content-wrap]{white-space:pre}div#p>svg>foreignObject>section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}
+/*!
+ * Marp default theme.
+ *
+ * @theme default
+ * @author Yuki Hattori
+ *
+ * @auto-scaling true
+ * @size 4:3 960px 720px
+ */div#p>svg>foreignObject>section .octicon{fill:currentColor;display:inline-block;vertical-align:text-bottom}div#p>svg>foreignObject>section .anchor{float:left;line-height:1;margin-left:-20px;padding-right:4px}div#p>svg>foreignObject>section .anchor:focus{outline:none}div#p>svg>foreignObject>section h1 .octicon-link,div#p>svg>foreignObject>section h2 .octicon-link,div#p>svg>foreignObject>section h3 .octicon-link,div#p>svg>foreignObject>section h4 .octicon-link,div#p>svg>foreignObject>section h5 .octicon-link,div#p>svg>foreignObject>section h6 .octicon-link{color:#1b1f23;vertical-align:middle;visibility:hidden}div#p>svg>foreignObject>section h1:hover .anchor,div#p>svg>foreignObject>section h2:hover .anchor,div#p>svg>foreignObject>section h3:hover .anchor,div#p>svg>foreignObject>section h4:hover .anchor,div#p>svg>foreignObject>section h5:hover .anchor,div#p>svg>foreignObject>section h6:hover .anchor{text-decoration:none}div#p>svg>foreignObject>section h1:hover .anchor .octicon-link,div#p>svg>foreignObject>section h2:hover .anchor .octicon-link,div#p>svg>foreignObject>section h3:hover .anchor .octicon-link,div#p>svg>foreignObject>section h4:hover .anchor .octicon-link,div#p>svg>foreignObject>section h5:hover .anchor .octicon-link,div#p>svg>foreignObject>section h6:hover .anchor .octicon-link{visibility:visible}div#p>svg>foreignObject>section h1:hover .anchor .octicon-link:before,div#p>svg>foreignObject>section h2:hover .anchor .octicon-link:before,div#p>svg>foreignObject>section h3:hover .anchor .octicon-link:before,div#p>svg>foreignObject>section h4:hover .anchor .octicon-link:before,div#p>svg>foreignObject>section h5:hover .anchor .octicon-link:before,div#p>svg>foreignObject>section h6:hover .anchor .octicon-link:before{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' aria-hidden='true'%3E%3Cpath fill-rule='evenodd' d='M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z'/%3E%3C/svg%3E");content:" ";display:inline-block;height:16px;width:16px}div#p>svg>foreignObject>section{word-wrap:break-word;color:#24292e;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:16px;line-height:1.5;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}div#p>svg>foreignObject>section{--marpit-root-font-size:16px}div#p>svg>foreignObject>section details{display:block}div#p>svg>foreignObject>section summary{display:list-item}div#p>svg>foreignObject>section a{background-color:initial}div#p>svg>foreignObject>section a:active,div#p>svg>foreignObject>section a:hover{outline-width:0}div#p>svg>foreignObject>section strong{font-weight:inherit;font-weight:bolder}div#p>svg>foreignObject>section h1{margin:.67em 0}div#p>svg>foreignObject>section img{border-style:none}div#p>svg>foreignObject>section code,div#p>svg>foreignObject>section kbd,div#p>svg>foreignObject>section pre{font-family:monospace,monospace;font-size:1em}div#p>svg>foreignObject>section hr{box-sizing:initial;overflow:visible}div#p>svg>foreignObject>section input{font:inherit;margin:0;overflow:visible}div#p>svg>foreignObject>section [type=checkbox]{padding:0}div#p>svg>foreignObject>section *,div#p>svg>foreignObject>section [type=checkbox]{box-sizing:border-box}div#p>svg>foreignObject>section input{font-family:inherit;font-size:inherit;line-height:inherit}div#p>svg>foreignObject>section a{color:#0366d6;text-decoration:none}div#p>svg>foreignObject>section a:hover{text-decoration:underline}div#p>svg>foreignObject>section strong{font-weight:600}div#p>svg>foreignObject>section hr{background:transparent;border-bottom:1px solid #dfe2e5;height:0;margin:15px 0;overflow:hidden}div#p>svg>foreignObject>section hr:after,div#p>svg>foreignObject>section hr:before{content:"";display:table}div#p>svg>foreignObject>section hr:after{clear:both}div#p>svg>foreignObject>section table{border-collapse:collapse;border-spacing:0}div#p>svg>foreignObject>section td,div#p>svg>foreignObject>section th{padding:0}div#p>svg>foreignObject>section details summary{cursor:pointer}div#p>svg>foreignObject>section h1,div#p>svg>foreignObject>section h2,div#p>svg>foreignObject>section h3,div#p>svg>foreignObject>section h4,div#p>svg>foreignObject>section h5,div#p>svg>foreignObject>section h6{margin-bottom:0;margin-top:0}div#p>svg>foreignObject>section h1{font-size:32px}div#p>svg>foreignObject>section h1,div#p>svg>foreignObject>section h2{font-weight:600}div#p>svg>foreignObject>section h2{font-size:24px}div#p>svg>foreignObject>section h3{font-size:20px}div#p>svg>foreignObject>section h3,div#p>svg>foreignObject>section h4{font-weight:600}div#p>svg>foreignObject>section h4{font-size:16px}div#p>svg>foreignObject>section h5{font-size:14px}div#p>svg>foreignObject>section h5,div#p>svg>foreignObject>section h6{font-weight:600}div#p>svg>foreignObject>section h6{font-size:12px}div#p>svg>foreignObject>section p{margin-bottom:10px;margin-top:0}div#p>svg>foreignObject>section blockquote{margin:0}div#p>svg>foreignObject>section ol,div#p>svg>foreignObject>section ul{margin-bottom:0;margin-top:0;padding-left:0}div#p>svg>foreignObject>section ol ol,div#p>svg>foreignObject>section ul ol{list-style-type:lower-roman}div#p>svg>foreignObject>section ol ol ol,div#p>svg>foreignObject>section ol ul ol,div#p>svg>foreignObject>section ul ol ol,div#p>svg>foreignObject>section ul ul ol{list-style-type:lower-alpha}div#p>svg>foreignObject>section dd{margin-left:0}div#p>svg>foreignObject>section code,div#p>svg>foreignObject>section pre{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:12px}div#p>svg>foreignObject>section pre{margin-bottom:0;margin-top:0}div#p>svg>foreignObject>section input::-webkit-inner-spin-button,div#p>svg>foreignObject>section input::-webkit-outer-spin-button{-webkit-appearance:none;appearance:none;margin:0}div#p>svg>foreignObject>section :checked+.radio-label{border-color:#0366d6;position:relative;z-index:1}div#p>svg>foreignObject>section .border{border:1px solid #e1e4e8!important}div#p>svg>foreignObject>section .border-0{border:0!important}div#p>svg>foreignObject>section .border-bottom{border-bottom:1px solid #e1e4e8!important}div#p>svg>foreignObject>section .rounded-1{border-radius:3px!important}div#p>svg>foreignObject>section .bg-white{background-color:#fff!important}div#p>svg>foreignObject>section .bg-gray-light{background-color:#fafbfc!important}div#p>svg>foreignObject>section .text-gray-light{color:#6a737d!important}div#p>svg>foreignObject>section .pl-3,div#p>svg>foreignObject>section .px-3{padding-left:16px!important}div#p>svg>foreignObject>section .px-3{padding-right:16px!important}div#p>svg>foreignObject>section .f6{font-size:12px!important}div#p>svg>foreignObject>section div#p>svg>foreignObject>section section.f6{--marpit-root-font-size:12px!important}div#p>svg>foreignObject>section .lh-condensed{line-height:1.25!important}div#p>svg>foreignObject>section .text-bold{font-weight:600!important}div#p>svg>foreignObject>section .pl-c{color:#6a737d}div#p>svg>foreignObject>section .pl-c1,div#p>svg>foreignObject>section .pl-s .pl-v{color:#005cc5}div#p>svg>foreignObject>section .pl-e,div#p>svg>foreignObject>section .pl-en{color:#6f42c1}div#p>svg>foreignObject>section .pl-s .pl-s1,div#p>svg>foreignObject>section .pl-smi{color:#24292e}div#p>svg>foreignObject>section .pl-ent{color:#22863a}div#p>svg>foreignObject>section .pl-k{color:#d73a49}div#p>svg>foreignObject>section .pl-pds,div#p>svg>foreignObject>section .pl-s,div#p>svg>foreignObject>section .pl-s .pl-pse .pl-s1,div#p>svg>foreignObject>section .pl-sr,div#p>svg>foreignObject>section .pl-sr .pl-cce,div#p>svg>foreignObject>section .pl-sr .pl-sra,div#p>svg>foreignObject>section .pl-sr .pl-sre{color:#032f62}div#p>svg>foreignObject>section .pl-smw,div#p>svg>foreignObject>section .pl-v{color:#e36209}div#p>svg>foreignObject>section .pl-bu{color:#b31d28}div#p>svg>foreignObject>section .pl-ii{background-color:#b31d28;color:#fafbfc}div#p>svg>foreignObject>section .pl-c2{background-color:#d73a49;color:#fafbfc}div#p>svg>foreignObject>section .pl-c2:before{content:"^M"}div#p>svg>foreignObject>section .pl-sr .pl-cce{color:#22863a;font-weight:700}div#p>svg>foreignObject>section .pl-ml{color:#735c0f}div#p>svg>foreignObject>section .pl-mh,div#p>svg>foreignObject>section .pl-mh .pl-en,div#p>svg>foreignObject>section .pl-ms{color:#005cc5;font-weight:700}div#p>svg>foreignObject>section .pl-mi{color:#24292e;font-style:italic}div#p>svg>foreignObject>section .pl-mb{color:#24292e;font-weight:700}div#p>svg>foreignObject>section .pl-md{background-color:#ffeef0;color:#b31d28}div#p>svg>foreignObject>section .pl-mi1{background-color:#f0fff4;color:#22863a}div#p>svg>foreignObject>section .pl-mc{background-color:#ffebda;color:#e36209}div#p>svg>foreignObject>section .pl-mi2{background-color:#005cc5;color:#f6f8fa}div#p>svg>foreignObject>section .pl-mdr{color:#6f42c1;font-weight:700}div#p>svg>foreignObject>section .pl-ba{color:#586069}div#p>svg>foreignObject>section .pl-sg{color:#959da5}div#p>svg>foreignObject>section .pl-corl{color:#032f62;text-decoration:underline}div#p>svg>foreignObject>section .mb-0{margin-bottom:0!important}div#p>svg>foreignObject>section .my-2{margin-bottom:8px!important;margin-top:8px!important}div#p>svg>foreignObject>section .pl-0{padding-left:0!important}div#p>svg>foreignObject>section .py-0{padding-bottom:0!important;padding-top:0!important}div#p>svg>foreignObject>section .pl-1{padding-left:4px!important}div#p>svg>foreignObject>section .pl-2{padding-left:8px!important}div#p>svg>foreignObject>section .py-2{padding-bottom:8px!important;padding-top:8px!important}div#p>svg>foreignObject>section .pl-3{padding-left:16px!important}div#p>svg>foreignObject>section .pl-4{padding-left:24px!important}div#p>svg>foreignObject>section .pl-5{padding-left:32px!important}div#p>svg>foreignObject>section .pl-6{padding-left:40px!important}div#p>svg>foreignObject>section .pl-7{padding-left:48px!important}div#p>svg>foreignObject>section .pl-8{padding-left:64px!important}div#p>svg>foreignObject>section .pl-9{padding-left:80px!important}div#p>svg>foreignObject>section .pl-10{padding-left:96px!important}div#p>svg>foreignObject>section .pl-11{padding-left:112px!important}div#p>svg>foreignObject>section .pl-12{padding-left:128px!important}div#p>svg>foreignObject>section hr{border-bottom-color:#eee}div#p>svg>foreignObject>section kbd{background-color:#fafbfc;border:1px solid #d1d5da;border-radius:3px;box-shadow:inset 0 -1px 0 #d1d5da;color:#444d56;display:inline-block;font:11px SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;line-height:10px;padding:3px 5px;vertical-align:middle}div#p>svg>foreignObject>section:after,div#p>svg>foreignObject>section:before{
+  /* content:""; */display:table}div#p>svg>foreignObject>section:after{clear:both}div#p>svg>foreignObject>section>:first-child{margin-top:0!important}div#p>svg>foreignObject>section>:last-child{margin-bottom:0!important}div#p>svg>foreignObject>section a:not([href]){color:inherit;text-decoration:none}div#p>svg>foreignObject>section blockquote,div#p>svg>foreignObject>section details,div#p>svg>foreignObject>section dl,div#p>svg>foreignObject>section ol,div#p>svg>foreignObject>section p,div#p>svg>foreignObject>section pre,div#p>svg>foreignObject>section table,div#p>svg>foreignObject>section ul{margin-bottom:16px;margin-top:0}div#p>svg>foreignObject>section hr{background-color:#e1e4e8;border:0;height:.25em;margin:24px 0;padding:0}div#p>svg>foreignObject>section blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;padding:0 1em}div#p>svg>foreignObject>section blockquote>:first-child{margin-top:0}div#p>svg>foreignObject>section blockquote>:last-child{margin-bottom:0}div#p>svg>foreignObject>section h1,div#p>svg>foreignObject>section h2,div#p>svg>foreignObject>section h3,div#p>svg>foreignObject>section h4,div#p>svg>foreignObject>section h5,div#p>svg>foreignObject>section h6{font-weight:600;line-height:1.25;margin-bottom:16px;margin-top:24px}div#p>svg>foreignObject>section h1{font-size:2em}div#p>svg>foreignObject>section h1,div#p>svg>foreignObject>section h2{border-bottom:1px solid #eaecef;padding-bottom:.3em}div#p>svg>foreignObject>section h2{font-size:1.5em}div#p>svg>foreignObject>section h3{font-size:1.25em}div#p>svg>foreignObject>section h4{font-size:1em}div#p>svg>foreignObject>section h5{font-size:.875em}div#p>svg>foreignObject>section h6{color:#6a737d;font-size:.85em}div#p>svg>foreignObject>section ol,div#p>svg>foreignObject>section ul{padding-left:2em}div#p>svg>foreignObject>section ol ol,div#p>svg>foreignObject>section ol ul,div#p>svg>foreignObject>section ul ol,div#p>svg>foreignObject>section ul ul{margin-bottom:0;margin-top:0}div#p>svg>foreignObject>section li{word-wrap:break-all}div#p>svg>foreignObject>section li>p{margin-top:16px}div#p>svg>foreignObject>section li+li{margin-top:.25em}div#p>svg>foreignObject>section dl{padding:0}div#p>svg>foreignObject>section dl dt{font-size:1em;font-style:italic;font-weight:600;margin-top:16px;padding:0}div#p>svg>foreignObject>section dl dd{margin-bottom:16px;padding:0 16px}div#p>svg>foreignObject>section table{display:block;overflow:auto;width:100%}div#p>svg>foreignObject>section table th{font-weight:600}div#p>svg>foreignObject>section table td,div#p>svg>foreignObject>section table th{border:1px solid #dfe2e5;padding:6px 13px}div#p>svg>foreignObject>section table tr{background-color:#fff;border-top:1px solid #c6cbd1}div#p>svg>foreignObject>section table tr:nth-child(2n){background-color:#f6f8fa}div#p>svg>foreignObject>section img{background-color:#fff;box-sizing:initial;max-width:100%}div#p>svg>foreignObject>section img[align=right]{padding-left:20px}div#p>svg>foreignObject>section img[align=left]{padding-right:20px}div#p>svg>foreignObject>section code{background-color:rgba(27,31,35,.05);border-radius:3px;font-size:85%;margin:0;padding:.2em .4em}div#p>svg>foreignObject>section pre{word-wrap:normal}div#p>svg>foreignObject>section pre>code{background:transparent;border:0;font-size:100%;margin:0;padding:0;white-space:pre;word-break:normal}div#p>svg>foreignObject>section .highlight{margin-bottom:16px}div#p>svg>foreignObject>section .highlight pre{margin-bottom:0;word-break:normal}div#p>svg>foreignObject>section pre{background-color:#f6f8fa;border-radius:3px;font-size:85%;line-height:1.45;overflow:auto;padding:16px}div#p>svg>foreignObject>section pre code{word-wrap:normal;background-color:initial;border:0;display:inline;line-height:inherit;margin:0;max-width:auto;overflow:visible;padding:0}div#p>svg>foreignObject>section .commit-tease-sha{color:#444d56;display:inline-block;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:90%}div#p>svg>foreignObject>section div#p>svg>foreignObject>section section.commit-tease-sha{--marpit-root-font-size:90%}div#p>svg>foreignObject>section .full-commit .btn-outline:not(:disabled):hover{border-color:#005cc5;color:#005cc5}div#p>svg>foreignObject>section .blob-wrapper{overflow-x:auto;overflow-y:hidden}div#p>svg>foreignObject>section .blob-wrapper-embedded{max-height:240px;overflow-y:auto}div#p>svg>foreignObject>section .blob-num{color:rgba(27,31,35,.3);cursor:pointer;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:12px;line-height:20px;min-width:50px;padding-left:10px;padding-right:10px;text-align:right;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:top;white-space:nowrap;width:1%}div#p>svg>foreignObject>section div#p>svg>foreignObject>section section.blob-num{--marpit-root-font-size:12px}div#p>svg>foreignObject>section .blob-num:hover{color:rgba(27,31,35,.6)}div#p>svg>foreignObject>section .blob-num:before{content:attr(data-line-number)}div#p>svg>foreignObject>section .blob-code{line-height:20px;padding-left:10px;padding-right:10px;position:relative;vertical-align:top}div#p>svg>foreignObject>section .blob-code-inner{word-wrap:normal;color:#24292e;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:12px;overflow:visible;white-space:pre}div#p>svg>foreignObject>section div#p>svg>foreignObject>section section.blob-code-inner{--marpit-root-font-size:12px}div#p>svg>foreignObject>section .pl-token.active,div#p>svg>foreignObject>section .pl-token:hover{background:#ffea7f;cursor:pointer}div#p>svg>foreignObject>section .tab-size[data-tab-size="1"]{-moz-tab-size:1;-o-tab-size:1;tab-size:1}div#p>svg>foreignObject>section .tab-size[data-tab-size="2"]{-moz-tab-size:2;-o-tab-size:2;tab-size:2}div#p>svg>foreignObject>section .tab-size[data-tab-size="3"]{-moz-tab-size:3;-o-tab-size:3;tab-size:3}div#p>svg>foreignObject>section .tab-size[data-tab-size="4"]{-moz-tab-size:4;-o-tab-size:4;tab-size:4}div#p>svg>foreignObject>section .tab-size[data-tab-size="5"]{-moz-tab-size:5;-o-tab-size:5;tab-size:5}div#p>svg>foreignObject>section .tab-size[data-tab-size="6"]{-moz-tab-size:6;-o-tab-size:6;tab-size:6}div#p>svg>foreignObject>section .tab-size[data-tab-size="7"]{-moz-tab-size:7;-o-tab-size:7;tab-size:7}div#p>svg>foreignObject>section .tab-size[data-tab-size="8"]{-moz-tab-size:8;-o-tab-size:8;tab-size:8}div#p>svg>foreignObject>section .tab-size[data-tab-size="9"]{-moz-tab-size:9;-o-tab-size:9;tab-size:9}div#p>svg>foreignObject>section .tab-size[data-tab-size="10"]{-moz-tab-size:10;-o-tab-size:10;tab-size:10}div#p>svg>foreignObject>section .tab-size[data-tab-size="11"]{-moz-tab-size:11;-o-tab-size:11;tab-size:11}div#p>svg>foreignObject>section .tab-size[data-tab-size="12"]{-moz-tab-size:12;-o-tab-size:12;tab-size:12}div#p>svg>foreignObject>section .task-list-item{list-style-type:none}div#p>svg>foreignObject>section .task-list-item+.task-list-item{margin-top:3px}div#p>svg>foreignObject>section .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}div#p>svg>foreignObject>section .hljs{background:#fff;color:#333;display:block;overflow-x:auto;padding:.5em}div#p>svg>foreignObject>section .hljs-comment,div#p>svg>foreignObject>section .hljs-meta{color:#969896}div#p>svg>foreignObject>section .hljs-emphasis,div#p>svg>foreignObject>section .hljs-quote,div#p>svg>foreignObject>section .hljs-strong,div#p>svg>foreignObject>section .hljs-template-variable,div#p>svg>foreignObject>section .hljs-variable{color:#df5000}div#p>svg>foreignObject>section .hljs-keyword,div#p>svg>foreignObject>section .hljs-selector-tag,div#p>svg>foreignObject>section .hljs-type{color:#d73a49}div#p>svg>foreignObject>section .hljs-attribute,div#p>svg>foreignObject>section .hljs-bullet,div#p>svg>foreignObject>section .hljs-literal,div#p>svg>foreignObject>section .hljs-symbol{color:#0086b3}div#p>svg>foreignObject>section .hljs-name,div#p>svg>foreignObject>section .hljs-section{color:#63a35c}div#p>svg>foreignObject>section .hljs-tag{color:#333}div#p>svg>foreignObject>section .hljs-attr,div#p>svg>foreignObject>section .hljs-selector-attr,div#p>svg>foreignObject>section .hljs-selector-class,div#p>svg>foreignObject>section .hljs-selector-id,div#p>svg>foreignObject>section .hljs-selector-pseudo,div#p>svg>foreignObject>section .hljs-title{color:#6f42c1}div#p>svg>foreignObject>section .hljs-addition{background-color:#eaffea;color:#55a532}div#p>svg>foreignObject>section .hljs-deletion{background-color:#ffecec;color:#bd2c00}div#p>svg>foreignObject>section .hljs-link{text-decoration:underline}div#p>svg>foreignObject>section .hljs-number{color:#005cc5}div#p>svg>foreignObject>section .hljs-string{color:#032f62}div#p>svg>foreignObject>section svg[data-marp-fitting=svg]{max-height:563px}div#p>svg>foreignObject>section h1{color:#246;font-size:1.6em}div#p>svg>foreignObject>section h1,div#p>svg>foreignObject>section h2{border-bottom:none}div#p>svg>foreignObject>section h2{font-size:1.3em}div#p>svg>foreignObject>section h3{font-size:1.1em}div#p>svg>foreignObject>section h4{font-size:1.05em}div#p>svg>foreignObject>section h5{font-size:1em}div#p>svg>foreignObject>section h6{font-size:.9em}div#p>svg>foreignObject>section h1 strong,div#p>svg>foreignObject>section h2 strong,div#p>svg>foreignObject>section h3 strong,div#p>svg>foreignObject>section h4 strong,div#p>svg>foreignObject>section h5 strong,div#p>svg>foreignObject>section h6 strong{color:#48c;font-weight:inherit}div#p>svg>foreignObject>section hr{height:0;padding-top:.25em}div#p>svg>foreignObject>section pre{border:1px solid #999;line-height:1.15;overflow:visible}div#p>svg>foreignObject>section pre code svg[data-marp-fitting=svg]{max-height:529px}div#p>svg>foreignObject>section footer,div#p>svg>foreignObject>section header{color:hsla(0,0%,40%,.75);font-size:18px;left:30px;margin:0;position:absolute}div#p>svg>foreignObject>section header{top:21px}div#p>svg>foreignObject>section footer{bottom:21px}div#p>svg>foreignObject>section{align-items:stretch;background:#fff;display:flex;flex-direction:column;flex-wrap:nowrap;font-size:29px;height:720px;justify-content:center;padding:78.5px;width:1280px}div#p>svg>foreignObject>section{--marpit-root-font-size:29px}div#p>svg>foreignObject>section>:last-child,div#p>svg>foreignObject>section[data-footer]>:nth-last-child(2){margin-bottom:0}div#p>svg>foreignObject>section>:first-child,div#p>svg>foreignObject>section>header:first-child+*{margin-top:0}div#p>svg>foreignObject>section:after{bottom:21px;color:#777;font-size:24px;padding:0;position:absolute;right:30px}div#p>svg>foreignObject>section:after{--marpit-root-font-size:24px}div#p>svg>foreignObject>section.invert{background-color:#222;color:#e6eaf0}div#p>svg>foreignObject>section.invert:after{color:#999}div#p>svg>foreignObject>section.invert img{background-color:transparent}div#p>svg>foreignObject>section.invert a{color:#50b3ff}div#p>svg>foreignObject>section.invert h1{color:#a3c5e7}div#p>svg>foreignObject>section.invert h2,div#p>svg>foreignObject>section.invert h3,div#p>svg>foreignObject>section.invert h4,div#p>svg>foreignObject>section.invert h5{color:#ebeff5}div#p>svg>foreignObject>section.invert blockquote,div#p>svg>foreignObject>section.invert h6{border-color:#3d3f43;color:#939699}div#p>svg>foreignObject>section.invert h1 strong,div#p>svg>foreignObject>section.invert h2 strong,div#p>svg>foreignObject>section.invert h3 strong,div#p>svg>foreignObject>section.invert h4 strong,div#p>svg>foreignObject>section.invert h5 strong,div#p>svg>foreignObject>section.invert h6 strong{color:#7bf}div#p>svg>foreignObject>section.invert hr{background-color:#3d3f43}div#p>svg>foreignObject>section.invert footer,div#p>svg>foreignObject>section.invert header{color:hsla(0,0%,60%,.75)}div#p>svg>foreignObject>section.invert code,div#p>svg>foreignObject>section.invert kbd{background-color:#111}div#p>svg>foreignObject>section.invert kbd{border-color:#666;box-shadow:inset 0 -1px 0 #555;color:#e6eaf0}div#p>svg>foreignObject>section.invert table tr{background-color:#12181d;border-color:#60657b}div#p>svg>foreignObject>section.invert table tr:nth-child(2n){background-color:#1b2024}div#p>svg>foreignObject>section.invert table td,div#p>svg>foreignObject>section.invert table th{border-color:#5b5e61}div#p>svg>foreignObject>section.invert pre{background-color:#0a0e12;border-color:#777}div#p>svg>foreignObject>section.invert pre code{background-color:transparent}div#p>svg>foreignObject>section[data-color] h1,div#p>svg>foreignObject>section[data-color] h2,div#p>svg>foreignObject>section[data-color] h3,div#p>svg>foreignObject>section[data-color] h4,div#p>svg>foreignObject>section[data-color] h5,div#p>svg>foreignObject>section[data-color] h6{color:currentColor}div#p>svg>foreignObject>section img[alt~=center]{display:block;margin:0 auto}div#p>svg>foreignObject>section[data-marpit-scope-H5tBJD9s]{padding-top:110px}div#p>svg>foreignObject>section[data-marpit-scope-H5tBJD9s] h1{position:absolute;left:80px;top:70px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-H5tBJD9s] p{position:absolute;left:80px;top:540px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-Xw4gaRRj]{padding-top:110px}div#p>svg>foreignObject>section[data-marpit-scope-Xw4gaRRj] h1{position:absolute;left:80px;top:70px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-Xw4gaRRj] p{position:absolute;left:80px;top:540px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-tIY7kBg5]{padding-top:110px}div#p>svg>foreignObject>section[data-marpit-scope-tIY7kBg5] h1{position:absolute;left:80px;top:70px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-tIY7kBg5] p{position:absolute;left:80px;top:540px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-nvITYSbW]{padding-top:110px}div#p>svg>foreignObject>section[data-marpit-scope-nvITYSbW] h1{position:absolute;left:80px;top:70px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-nvITYSbW] p{position:absolute;left:80px;top:540px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-WYn6CLBj]{padding-top:110px}div#p>svg>foreignObject>section[data-marpit-scope-WYn6CLBj] h1{position:absolute;left:80px;top:70px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-WYn6CLBj] p{position:absolute;left:80px;top:540px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-seN7V1C7]{padding-top:110px}div#p>svg>foreignObject>section[data-marpit-scope-seN7V1C7] h1{position:absolute;left:80px;top:70px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-seN7V1C7] p{position:absolute;left:80px;top:540px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-lOlGetZw]{padding-top:110px}div#p>svg>foreignObject>section[data-marpit-scope-lOlGetZw] h1{position:absolute;left:80px;top:70px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-lOlGetZw] p{position:absolute;left:80px;top:540px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-F1l85fJs]{padding-top:110px}div#p>svg>foreignObject>section[data-marpit-scope-F1l85fJs] h1{position:absolute;left:80px;top:70px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-F1l85fJs] p{position:absolute;left:80px;top:540px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-4t2kktvW] h1{position:absolute;left:80px;top:20px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-4t2kktvW] p{position:absolute;left:80px;top:600px;right:80px;height:70px;line-height:30px}div#p>svg>foreignObject>section[data-marpit-scope-JDpyQw7s] h1{position:absolute;left:80px;top:20px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-JDpyQw7s] p{position:absolute;left:80px;top:600px;right:80px;height:70px;line-height:30px}div#p>svg>foreignObject>section[data-marpit-scope-LUGYxQxG] h1{position:absolute;left:80px;top:20px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-LUGYxQxG] p{position:absolute;left:80px;top:600px;right:80px;height:40px;line-height:30px}div#p>svg>foreignObject>section[data-marpit-scope-P0O4eE3J] h1{position:absolute;left:80px;top:70px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-P0O4eE3J] p{position:absolute;left:80px;top:600px;right:80px;height:40px;line-height:30px}div#p>svg>foreignObject>section[data-marpit-scope-rPuoeh7w] table{margin-left:300px;margin-right:auto;font-size:19px;text-align:center}div#p>svg>foreignObject>section[data-marpit-scope-MicZakFP] pre{font-size:16px}div#p>svg>foreignObject>section[data-marpit-scope-2FD6dcd4] h1{position:absolute;left:80px;top:20px;right:80px;height:70px;line-height:70px}div#p>svg>foreignObject>section[data-marpit-scope-2FD6dcd4] p{position:absolute;left:80px;top:600px;right:80px;height:40px;line-height:30px}div#p>svg>foreignObject>section[data-marpit-scope-8BSeFjDA] table{margin-left:300px;margin-right:center;text-align:center}div#p>svg>foreignObject>section[data-marpit-scope-8BSeFjDA] th{text-align:center}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]{columns:initial!important;display:block!important;padding:0!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:before,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:before{display:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction=vertical]{flex-direction:column}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split]>div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split,50%)}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split=right]>div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]>figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#p>svg>foreignObject>section[data-marpit-advanced-background=content],div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo]{background:transparent!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo],div#p>svg[data-marpit-svg]>foreignObject[data-marpit-advanced-background=pseudo]{pointer-events:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background-split]{width:100%;height:100%}</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id="p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="1" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Hacking Hadoukens</h1>
+<h2>Reverse Engineering a Street Fighter Two Cabinet</h2>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="2" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Table of Contents</h1>
+<ul>
+<li>Introduction</li>
+<li>Platform Overview / Goals</li>
+<li>Hardware Teardown</li>
+<li>Firmware Extraction</li>
+<li>Firmware Analysis</li>
+<li>Conclusion</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="3" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Introduction</h1>
+<ul>
+<li>
+<p><code>whoami?</code></p>
+<ul>
+<li>Matthew Alt</li>
+<li><a href="https://twitter.com/wrongbaud">@wrongbaud</a></li>
+</ul>
+</li>
+<li>
+<p>Security researcher for Caesar Creek Software</p>
+<ul>
+<li>Previously @ MIT Lincoln Laboratory, Revo Technik/STASIS Engineering</li>
+<li>Recovering ECU tuner</li>
+</ul>
+</li>
+<li>
+<p>Offer private training/consulting through <a href="https://voidstarsec.com">VoidStar Security LLC</a></p>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="4" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Presentation Goals</h1>
+<ol>
+<li>Explain how to perform black-box analysis of embedded systems</li>
+<li>Learn how to extract SPI flash memory</li>
+<li>Review initial steps to take when looking at firmware binaries</li>
+<li>Review UART/SPI protocols and the tools to interface with them</li>
+<li>Parse a custom filesystem image with Kaitai Struct</li>
+</ol>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="5" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/cabinet.jpg&quot;);background-size:70%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="5" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="5" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1>Platform Overview</h1>
+
+<ul>
+<li>Street Fighter 2 Championship Edition Arcade Cab
+<ul>
+<li>Developed by &quot;My Arcade&quot;</li>
+</ul>
+</li>
+<li>Allows for two-player co-op</li>
+<li>6 button layout + coin insert buttons
+<ul>
+<li>Perfect for generic MAME</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="5" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="6" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Research Goals</h1>
+<ol>
+<li>Extract all non-volatile storage</li>
+<li>Perform cursory analysis of firmware
+<ul>
+<li>Operating System</li>
+<li>Application structure</li>
+</ul>
+</li>
+<li>Determine if it's possible to run custom programs on the target</li>
+<li>Overwrite the SFII ROM with a different ROM</li>
+</ol>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="7" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Hardware Overview: Interfaces</h1>
+<ul>
+<li>When reviewing an embedded system, it is essential to review its external interfaces</li>
+<li>The SF2 cabinet has the following externally exposed interfaces:
+<ul>
+<li>USB (Charging)</li>
+<li>Serial (via 3.5mm audio connector) for multiplayer</li>
+</ul>
+</li>
+<li>This does not leave us with a large attack surface so that we will perform a hardware teardown</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="8" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Hardware Overview: Goals</h1>
+<ul>
+<li>What are we looking for when we perform a hardware teardown?
+<ul>
+<li>Processors</li>
+<li>Non-volatile flash devices</li>
+<li>Debug interfaces</li>
+<li>Silkscreen or other information labeled on the PCB</li>
+</ul>
+</li>
+<li>When performing a hardware teardown, be sure to write down / document part numbers for components!
+<ul>
+<li><em>Sometimes</em> you can find datasheets</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-marpit-scope-H5tBJD9s="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="9" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/pcb.jpg&quot;);background-size:70%;"></figure><figure style="background-image:url(&quot;images/pcb-2.jpg&quot;);background-size:70%;"></figure><figure style="background-image:url(&quot;images/pcb-3.jpg&quot;);background-size:70%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="9" data-marpit-scope-H5tBJD9s="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="9" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;" data-marpit-advanced-background="content">
+<h1>Hardware Teardown</h1>
+<p align="center">
+This target consists of two main PCBs that we will review
+</p>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="9" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-marpit-scope-Xw4gaRRj="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="10" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/pcb.jpg&quot;);background-size:99%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="10" data-marpit-scope-Xw4gaRRj="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="10" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1>Hardware Teardown</h1>
+
+<ul>
+<li>This is our main PCB which contains most of our components of interest</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="10" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-marpit-scope-tIY7kBg5="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="11" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/pcb-cpu.jpg&quot;);background-size:99%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="11" data-marpit-scope-tIY7kBg5="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="11" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1>Hardware Teardown</h1>
+<h2>CPU / Processors</h2>
+
+<ul>
+<li>The first component that stands out is likely the CPU</li>
+<li>The following characteristics indicate that this is a CPU
+<ul>
+<li>Central board location</li>
+<li>Oscillator connected to it</li>
+<li>All traces lead to it</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="11" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-marpit-scope-nvITYSbW="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="12" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/pcb-dbg.jpg&quot;);background-size:99%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="12" data-marpit-scope-nvITYSbW="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="12" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1>Hardware Teardown</h1>
+<h2>Debug Headers</h2>
+
+<ul>
+<li>These vias are sometimes indicative of debug headers</li>
+<li>Note that one is silk-screened <code>GND/TX</code></li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="12" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-marpit-scope-WYn6CLBj="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="13" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/pcb-spi.jpg&quot;);background-size:99%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="13" data-marpit-scope-WYn6CLBj="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="13" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1>Hardware Teardown</h1>
+<h2>SPI Flash</h2>
+
+<ul>
+<li>The highlighted component is a SPI flash chip</li>
+<li>This is likely where our data is stored!</li>
+<li>Part number: <code>EN25QH64</code></li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="13" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-marpit-scope-seN7V1C7="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="14" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/pcb-2.jpg&quot;);background-size:99%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="14" data-marpit-scope-seN7V1C7="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="14" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1>Hardware Teardown</h1>
+<h2>USB / Serial Connections</h2>
+
+<ul>
+<li>This smaller board houses the USB connector and 3.5mm connector</li>
+<li><code>TX</code>/<code>RX</code>/<code>DET</code> are used for multiplayer purposes, not debugging :(</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="14" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-marpit-scope-lOlGetZw="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="15" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/pcb-3.jpg&quot;);background-size:99%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="15" data-marpit-scope-lOlGetZw="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="15" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1>Hardware Teardown</h1>
+<h2>Main Board Bottom Side</h2>
+
+<ul>
+<li>There are not many components on the underside of the PCB</li>
+<li>The silkscreen gives us more information about the test pads
+<ul>
+<li>IO lines for buttons</li>
+<li>FPC connector for USB/3.5mm PCB</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="15" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="16" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Hardware Teardown: Component Overview</h1>
+<ul>
+<li>Based on our hardware teardown, we now know:
+<ul>
+<li>Utilizes on G20 ARM</li>
+<li>Contains a SPI flash chip</li>
+<li>Has a potential debug header (<code>GND</code>/<code>TX</code>)</li>
+</ul>
+</li>
+<li>Next, we will examine our two potential interfaces
+<ul>
+<li>UART</li>
+<li>SPI</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="17" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:30%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/uart1.png&quot;);background-size:auto;"></figure></div></section></foreignObject><foreignObject width="70%" height="720"><section id="17" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="17" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:30%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1>UART: Overview</h1>
+<ul>
+<li>
+<p>UART = Universal Asynchronous Receiver Transmitter</p>
+<ul>
+<li>Asynchronous = no external clock</li>
+<li>Often referred to simply as “serial.”</li>
+</ul>
+</li>
+<li>
+<p>Used to transmit and receive serial data between two components</p>
+</li>
+<li>
+<p>Utilizes two lines, Tx and Rx</p>
+<ul>
+<li>Tx = Transmit</li>
+<li>Rx = Receive</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="17" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="18" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/pi-gpio-uart.svg&quot;);background-size:75%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="18" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="18" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1>UART: Pi Interfacing</h1>
+<ul>
+<li><code>TXD0/IO14</code> = Transmit</li>
+<li><code>RXD0/IO15</code> = Receive</li>
+<li>Can be accessed via <code>/dev/ttyS0</code><br />
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="18" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="19" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>UART Tools: <code>screen</code>/<code>minicom</code></h1>
+<ul>
+<li>The Unix tool screen can be used to access serial ports
+<ul>
+<li><code>screen /path/to/device baudrate</code></li>
+<li>Exit by pressing <code>Ctrl-a</code> then <code>k</code></li>
+</ul>
+</li>
+<li><code>minicom</code> can also be used to interact with serial ports and provides<br />
+additional features
+<ul>
+<li><code>sudo minicom -b baudrate /path/to/device</code></li>
+<li>Allows more complex settings to be saved in a config file</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="20" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/pcb-serial.jpg&quot;);background-size:60%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="20" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="20" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1>SF2: UART Access</h1>
+
+<ul>
+<li>We will connect to the cabinet's serial debug header with a baudrate of <code>115200</code></li>
+<li><code>sudo screen /dev/ttyS0 115200</code></li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="20" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="21" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>SF2: UART Access</h1>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>BOOT0 is starting
+init dram , base        is 0x80000000
+init dram , clk         is 156
+init dram , access_mode is 1
+init dram , cs_num      is 0x55000001
+init dram , ddr8_remap  is 0
+init dram , sdr_ddr     is 1
+init dram , bwidth      is 16
+init dram , col_width   is 10
+init dram , row_width   is 13
+init dram , bank_size   is 4
+init dram , cas         is 3
+init dram , size        is 120
+dram init successed,size is 64
+jump to BOOT1
+port:1, port_num:3, func:5 pull:1
+port:5, port_num:8, func:3 pull:0
+DBG: boot1 starting!
+DBG: init key OK
+before check_key_to_fel.
+=== key_type =1    ===
+port0:1
+port_num0:0
+key_value:0
+not times up, not jump to fel.
+port:3, port_num:1, func:2 pull:1
+port:3, port_num:0, func:2 pull:1
+port:3, port_num:3, func:2 pull:1
+port:3, port_num:2, func:2 pull:1
+value=0
+jump to kernal
+port:3, port_num:1, func:2 pull:1
+port:3, port_num:0, func:2 pull:1
+port:3, port_num:3, func:2 pull:1
+port:3, port_num:2, func:2 pull:1
+EPOS_MEM_DBG ON?, log_mem:0x0
+</span></span></foreignObject></svg></code></pre>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="22" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>SF2 UART Access</h1>
+<ul>
+<li>The debug logs for this device are very verbose
+<ul>
+<li>Over 14kb of data!</li>
+</ul>
+</li>
+<li>While the information is useful, we are not given a shell or any other kind of access
+<ul>
+<li>This is still useful for debugging</li>
+</ul>
+</li>
+<li>Some interesting strings appear in the logfile:
+<ul>
+<li><code>EPOS_MEM_DBG ON?, log_mem:0x0</code></li>
+<li><code>fba_open:d:\game\sf2ceua.zip</code></li>
+<li><code>read hiscore file, szFilename:e:\sf2ceua.hi, fp:-1037855776</code></li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="23" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>SF2: UART Access Conclusion</h1>
+<ul>
+<li>With this UART we can get access to debug logs
+<ul>
+<li>There is no <code>Rx</code> line, so we can only receive data from the target</li>
+</ul>
+</li>
+<li>The debug logs tell us the following:
+<ul>
+<li>The EPOS RTOS is likely being used</li>
+<li>The SF2 ROM is likely a standard MAME ROM</li>
+</ul>
+</li>
+<li>The application in use is <a href="https://github.com/barry65536/FBAlpha">FB Alpha</a>
+<ul>
+<li><code>FB Alpha</code> is an <a href="https://www.fbalpha.com/">arcade emulator!</a></li>
+</ul>
+</li>
+<li>To learn more, we will need to try to dump the flash</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="24" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>SPI Flash Extraction</h1>
+<ul>
+<li>We have identified the component which likely holds our data
+<ul>
+<li><code>EN25QH64</code></li>
+</ul>
+</li>
+<li>SPI flash chips can be extracted in circuit (without removing them)
+<ul>
+<li>We will use a Raspberry Pi for this</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="25" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Serial Peripheral Interface</h1>
+<ul>
+<li>SPI is a synchronous serial communications interface
+<ul>
+<li>Commonly used for external sensors, SPI flash, etc</li>
+</ul>
+</li>
+<li>SPI operates in full-duplex mode
+<ul>
+<li>This means that both lines are active</li>
+</ul>
+</li>
+<li>It requires 4 lines to be implemented
+<ul>
+<li><code>CS</code>/<code>CLK</code>/<code>SDI</code>/<code>SDO</code></li>
+</ul>
+</li>
+<li>The protocol utilizes a host/target paradigm</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="26" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>SPI: Pin Usage / Definition</h1>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chip Select (CS)</td>
+<td>Used to select the appropriate device on the SPI bus that the host wishes to communicate with</td>
+</tr>
+<tr>
+<td>Clock (CLK)</td>
+<td>Clock signal that is host generated; data is sampled based on the configured SPI mode</td>
+</tr>
+<tr>
+<td>Serial Data Out (SDO/MOSI)</td>
+<td>Used to send data to the target device from the host, commands are issued through this line</td>
+</tr>
+<tr>
+<td>Serial Data In (SDI/MISO)</td>
+<td>Responses from the target device are sent over this line</td>
+</tr>
+</tbody>
+</table>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-marpit-scope-F1l85fJs="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="27" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/spi-overview-pins.svg&quot;);background-size:70%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="27" data-marpit-scope-F1l85fJs="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="27" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;" data-marpit-advanced-background="content">
+<h1>SPI Connections</h1>
+<p align="center">
+The host controls the <b>CS</b>, <b>CLK</b> and <b>SDO</b> lines. The target responds on the <b>SDI</b> line
+</p>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="27" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="28" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/pi-gpio-spi.svg&quot;);background-size:90%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="28" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="28" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1>SPI: Pi Interfacing</h1>
+<ul>
+<li><code>IO10/SDO</code></li>
+<li><code>IO9/SDI</code></li>
+<li><code>IO11/SCLK</code></li>
+<li><code>IO8/CS</code></li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="28" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="29" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>SPI Tools: <code>flashrom</code></h1>
+<ul>
+<li>Flashrom is an open-source utility that can  read and write SPI flash memory
+<ul>
+<li>Many chips and targets are supported</li>
+<li>Adding additional chips is straightforward</li>
+</ul>
+</li>
+<li>Flashrom can run on the Raspberry Pi!
+<ul>
+<li>Check out the man pages: man flashrom</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="30" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>SPI Tools: <code>flashrom</code></h1>
+<ul>
+<li>Flashrom can interact with multiple hardware devices, referred to as &quot;programmers.&quot;
+<ul>
+<li>FT2232h (FTDI)</li>
+<li>Linux SPI Peripherals (Like the one on the Pi!)</li>
+<li><a href="https://flashrom.org/Supported_programmers">More are listed in the documentation</a></li>
+</ul>
+</li>
+<li>The programmer is specified with the <code>-p</code> argument</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="31" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>SPI Tools: <code>flashrom</code></h1>
+<h2>Programmer Selection</h2>
+<ul>
+<li>An example programmer argument can be seen below:
+<ul>
+<li><code>-p linux_spi:dev=/dev/spidev0.0,spispeed=800</code></li>
+</ul>
+</li>
+<li><code>linux_spi</code>
+<ul>
+<li>Linux based spi subsystem is to be used</li>
+</ul>
+</li>
+<li><code>dev=/dev/spidev0.0</code>
+<ul>
+<li>Path to SPI device</li>
+</ul>
+</li>
+<li><code>spispeed=800</code>
+<ul>
+<li>Clock speed to be used (in Khz)</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-marpit-scope-4t2kktvW="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="32" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/pcb-with-clip.jpg&quot;);background-size:50%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="32" data-marpit-scope-4t2kktvW="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="32" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;" data-marpit-advanced-background="content">
+<h1>SPI Flash Extraction:</h1>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="32" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="33" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/spi_clip_wiring_v2_no_bb_bb.png&quot;);background-size:80%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="33" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="33" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1>SPI Flash Extraction</h1>
+
+<table>
+<thead>
+<tr>
+<th>Raspberry Pi GPIO</th>
+<th>TSOP8 Clip</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CE0 / IO8</td>
+<td>1</td>
+</tr>
+<tr>
+<td>SDI/IO9</td>
+<td>2</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>4</td>
+</tr>
+<tr>
+<td>SDO/IO10</td>
+<td>5</td>
+</tr>
+<tr>
+<td>CLK/IO11</td>
+<td>6</td>
+</tr>
+<tr>
+<td>3V3</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="33" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-marpit-scope-JDpyQw7s="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="34" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/flashrom.png&quot;);background-size:70%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="34" data-marpit-scope-JDpyQw7s="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="34" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;" data-marpit-advanced-background="content">
+<h1>SPI Flash Extraction</h1>
+<p align="center">
+Flashrom was able to dump the SPI flash memory, both dumps have the same <code>md5sum</code> result
+</p>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="34" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-marpit-scope-LUGYxQxG="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="35" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/binwalk.png&quot;);background-size:60%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="35" data-marpit-scope-LUGYxQxG="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="35" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;" data-marpit-advanced-background="content">
+<h1>SPI Flash: Initial Analysis</h1>
+<p align="center">
+After extracting the firmware, we will use <code>binwalk</code>/<code>strings</code> on the resulting image
+</p>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="35" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="36" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>SPI FLash: Binwalk Output</h1>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+778808        0xBE238         JPEG image data, EXIF standard
+778820        0xBE244         TIFF image data, big-endian, offset of first image directory: 8
+779486        0xBE4DE         Copyright string: &quot;Copyright (c) 1998 Hewlett-Packard Company&quot;
+786200        0xBFF18         Copyright string: &quot;Copyright (c) 1998 Hewlett-Packard Company&quot;
+794662        0xC2026         Copyright string: &quot;Copyright (c) 1998 Hewlett-Packard Company&quot;
+2512544       0x2656A0        Zlib compressed data, default compression
+2651638       0x2875F6        Copyright string: &quot;copyright displaying) or when the hiscore **&quot;
+2832512       0x2B3880        Zip archive data, at least v2.0 to extract, compressed size: 44, uncompressed size: 279, name: bprg1.11d
+2832625       0x2B38F1        Zip archive data, at least v2.0 to extract, compressed size: 47, uncompressed size: 279, name: buf1
+2832726       0x2B3956        Zip archive data, at least v2.0 to extract, compressed size: 47, uncompressed size: 279, name: c632.ic1
+2832839       0x2B39C7        Zip archive data, at least v2.0 to extract, compressed size: 53, uncompressed size: 279, name: ioa1
+2832946       0x2B3A32        Zip archive data, at least v2.0 to extract, compressed size: 53, uncompressed size: 279, name: iob1.12d
+2833065       0x2B3AA9        Zip archive data, at least v2.0 to extract, compressed size: 45, uncompressed size: 260, name: ioc1.ic7
+2833176       0x2B3B18        Zip archive data, at least v2.0 to extract, compressed size: 71, uncompressed size: 279, name: prg1
+2833301       0x2B3B95        Zip archive data, at least v2.0 to extract, compressed size: 47, uncompressed size: 279, name: rom1
+2833402       0x2B3BFA        Zip archive data, at least v2.0 to extract, compressed size: 285723, uncompressed size: 524288, name: s92-10m.3c
+3119165       0x2F983D        Zip archive data, at least v2.0 to extract, compressed size: 281716, uncompressed size: 524288, name: s92-11m.4c
+3400921       0x33E4D9        Zip archive data, at least v2.0 to extract, compressed size: 185573, uncompressed size: 524288, name: s92-12m.5c
+3586534       0x36B9E6        Zip archive data, at least v2.0 to extract, compressed size: 181541, uncompressed size: 524288, name: s92-13m.6c
+3768115       0x397F33        Zip archive data, at least v2.0 to extract, compressed size: 290810, uncompressed size: 524288, name: s92-1m.3a
+4058964       0x3DEF54        Zip archive data, at least v2.0 to extract, compressed size: 290778, uncompressed size: 524288, name: s92-2m.4a
+4349781       0x425F55        Zip archive data, at least v2.0 to extract, compressed size: 195599, uncompressed size: 524288, name: s92-3m.5a
+4545419       0x455B8B        Zip archive data, at least v2.0 to extract, compressed size: 195382, uncompressed size: 524288, name: s92-4m.6a
+4740840       0x4856E8        Zip archive data, at least v2.0 to extract, compressed size: 293202, uncompressed size: 524288, name: s92-5m.7a
+5034081       0x4CD061        Zip archive data, at least v2.0 to extract, compressed size: 294846, uncompressed size: 524288, name: s92-6m.8a
+5328966       0x515046        Zip archive data, at least v2.0 to extract, compressed size: 204031, uncompressed size: 524288, name: s92-7m.9a
+5533036       0x546D6C        Zip archive data, at least v2.0 to extract, compressed size: 204872, uncompressed size: 524288, name: s92-8m.10a
+5737948       0x578DDC        Zip archive data, at least v2.0 to extract, compressed size: 69, uncompressed size: 279, name: s9263b.1a
+5738086       0x578E66        Zip archive data, at least v2.0 to extract, compressed size: 216174, uncompressed size: 524288, name: s92e_23b.8f
+5954335       0x5ADB1F        Zip archive data, at least v2.0 to extract, compressed size: 32045, uncompressed size: 65536, name: s92_09.11a
+5986452       0x5B5894        Zip archive data, at least v2.0 to extract, compressed size: 116790, uncompressed size: 131072, name: s92_18.11c
+6103314       0x5D2112        Zip archive data, at least v2.0 to extract, compressed size: 116874, uncompressed size: 131072, name: s92_19.12c
+6220260       0x5EE9E4        Zip archive data, at least v2.0 to extract, compressed size: 46782, uncompressed size: 524288, name: s92_21a.6f
+6267082       0x5FA0CA        Zip archive data, at least v2.0 to extract, compressed size: 97339, uncompressed size: 524288, name: s92_22b.7f
+6364493       0x611D4D        Zip archive data, at least v2.0 to extract, compressed size: 58, uncompressed size: 279, name: sou1
+6367003       0x61271B        End of Zip archive, footer length: 22
+6367028       0x612734        Zip archive data, at least v2.0 to extract, compressed size: 204370, uncompressed size: 524288, name: s92u_23a.8f
+6571439       0x6445AF        Zip archive data, at least v2.0 to extract, compressed size: 119139, uncompressed size: 524288, name: s92_22a.7f
+6690731       0x6617AB        End of Zip archive, footer length: 22
+</span></span></foreignObject></svg></code></pre>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-marpit-scope-P0O4eE3J="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="37" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/config.png&quot;);background-size:70%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="37" data-marpit-scope-P0O4eE3J="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="37" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;" data-marpit-advanced-background="content">
+<h1>SPI Flash: Initial Analysis</h1>
+<p align="center">
+Examining the strings in the binary showed some plaintext data
+</p>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="37" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="38" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>RE Tips: Firmware Blob Analysis</h1>
+<ul>
+<li>In addition to running <code>binwalk</code> and <code>strings</code>, examine the beginning of the file for header information
+<ul>
+<li><code>hexdump -C -n512 file.bin</code></li>
+</ul>
+</li>
+<li>When examining firmware headers, look for:
+<ul>
+<li>Start addresses (<code>0x80000000</code>, etc.)</li>
+<li>Branch instructions (architecture-dependent)</li>
+<li>Size fields / possible checksums</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="39" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>SPI Flash Analysis</h1>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>pi@voidstar:~ $ hexdump -n512 -C street-fighter.bin 
+00000000  a8 00 00 ea 65 47 4f 4e  2e 42 54 30 0d 0c 66 fc  |....eGON.BT0..f.|
+00000010  00 3a 00 00 30 00 00 00  32 30 30 30 31 31 30 30  |.:..0...20001100|
+00000020  31 32 30 30 31 31 30 30  53 55 4e 49 49 00 00 00  |12001100SUNII...|
+00000030  78 02 00 00 31 32 30 30  00 00 00 80 78 00 00 00  |x...1200....x...|
+00000040  9c 00 00 00 01 00 00 00  01 00 00 55 00 00 00 00  |...........U....|
+00000050  01 00 00 00 10 00 00 00  0a 00 00 00 0d 00 00 00  |................|
+00000060  04 00 00 00 03 00 00 00  01 00 00 00 01 03 05 01  |................|
+00000070  01 ff 00 00 00 00 00 00  00 00 00 00 01 00 00 00  |................|
+00000080  06 00 03 01 01 ff 00 00  06 05 03 01 01 ff 00 00  |................|
+00000090  06 03 03 01 01 ff 00 00  06 01 03 01 01 ff 00 00  |................|
+000000a0  00 00 00 00 00 00 00 00  03 01 02 01 01 01 00 00  |................|
+000000b0  03 00 02 01 01 01 00 00  03 03 02 01 01 01 00 00  |................|
+000000c0  03 02 02 01 01 01 00 00  00 00 00 00 00 00 00 00  |................|
+000000d0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+</span></span></foreignObject></svg></code></pre>
+<p align="center">
+Examining the first 512 bytes of the file reveal what looks like a header; googling these strings leads us to the <a href="https://linux-sunxi.org/FEL">Sunxi FEL Webpage</a>
+<p>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="40" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>SPI Flash Analysis</h1>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>pi@voidstar:~ $ hexdump -n512 -C street-fighter.bin 
+00000000  a8 00 00 ea 65 47 4f 4e  2e 42 54 30 0d 0c 66 fc  |....eGON.BT0..f.|
+</span></span></foreignObject></svg></code></pre>
+<p align="center">
+The first byte sequence - <code>a8 00 00 ea</code> is an ARM branch instruction!
+<p>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="41" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>SPI Flash Analysis</h1>
+<ul>
+<li>Now that we have extracted the SPI flash, we will attempt to understand the boot process
+<ul>
+<li>How many stages are there in the boot process?</li>
+<li>Are there any stages that we can interrupt?</li>
+</ul>
+</li>
+<li>We also need to answer the following questions:
+<ul>
+<li>What OS is in use? (if any)</li>
+<li>What filesystem(s) are present?</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="42" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/boot-strings.png&quot;);background-size:80%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="42" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="42" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1>SPI Flash Analysis</h1>
+
+<ul>
+<li>Here we see some debug strings
+<ul>
+<li>Are these present in our serial logs?</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="42" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="43" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Understanding the Boot Process</h1>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>BOOT0 is starting 
+init dram , base        is 0x80000000 
+init dram , clk         is 156 
+init dram , access_mode is 1 
+init dram , cs_num      is 0x55000001 
+init dram , ddr8_remap  is 0 
+init dram , sdr_ddr     is 1 
+init dram , bwidth      is 16 
+init dram , col_width   is 10 
+init dram , row_width   is 13 
+init dram , bank_size   is 4 
+init dram , cas         is 3 
+init dram , size        is 120 
+dram init successed,size is 64 
+jump to BOOT1 
+DBG: boot1 starting! 
+DBG: init key OK 
+before check_key_to_fel. 
+</span></span></foreignObject></svg></code></pre>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="44" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Understanding the Boot Process</h1>
+<ul>
+<li>After further analysis of the flash, there are two possible boot images:
+<ul>
+<li><code>eGON.BT0</code> at address <code>0</code></li>
+<li><code>eGON.BT1</code> at address <code>0x6000</code></li>
+</ul>
+</li>
+<li>In both boot images, there are references to jump to <code>fel</code></li>
+<li>After researching <code>FEL</code> we find the following on the <a href="https://linux-sunxi.org/FEL">Allwinner website</a></li>
+</ul>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>FEL is a low-level subroutine contained in the BootROM on Allwinner devices. It is responsible for the initial programming and recovery of devices using USB. 
+</span></span></foreignObject></svg></code></pre>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="45" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Understanding FEL Mode</h1>
+<ul>
+<li>FEL is a low-level subroutine contained in the BootROM on Allwinner devices.
+<ul>
+<li>It is used for initial programming and recovery of devices using USB.</li>
+</ul>
+</li>
+<li>Devices must enter <code>FEL</code> mode, causing them to present themselves as a USB device
+<ul>
+<li><code>FEL</code> mode is entered by holding certain IO lines on boot</li>
+</ul>
+</li>
+<li><strong>If</strong> this mode is present on our cabinet, how might we trigger it?</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="46" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Understanding FEL Mode</h1>
+<ul>
+<li>After testing, it was discovered that holding volume down during startup causes <code>FEL</code> mode to be entered</li>
+</ul>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>[129080.108765] usb 1-1.1: new full-speed USB device number 16 using xhci_hcd
+[129080.251695] usb 1-1.1: New USB device found, idVendor=1f3a, idProduct=efe8, bcdDevice= 2.b3
+[129080.251718] usb 1-1.1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+</span></span></foreignObject></svg></code></pre>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="47" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>SPI Flash: Analysis</h1>
+<ul>
+<li>Based on our initial analysis of the SPI flash, we know the following:
+<ul>
+<li>There is a two-stage bootloader</li>
+<li><code>FEL</code> mode can be entered on startup</li>
+<li>The CPU is an Allwinner Series CPU</li>
+<li>FB Alpha Emulation software is in use</li>
+<li>The SF2 ROM in use is likely a standard one
+<ul>
+<li>It matches the same structure as the typical MAME ROM</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="48" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Using FEL Mode</h1>
+<ul>
+<li>We can enter <code>FEL</code> mode, causing the cabinet to present itself as a USB device
+<ul>
+<li>What can we do with this?</li>
+</ul>
+</li>
+</ul>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>before check_key_to_fel. 
+===     key_type =1    === 
+port0:1 
+port_num0:0 
+key_value:0 
+times up, detect io jump to fel. 
+key found, jump to fel
+</span></span></foreignObject></svg></code></pre>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="49" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="49" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Using FEL Mode</h1>
+<ul>
+<li>To communicate with the device in <code>FEL</code> mode, we need to build the <code>sunxi-tools</code></li>
+<li>After building this software, the <code>FEL</code> version can be queried as shown below:</li>
+</ul>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>pi@voidstar:~/sf2/sunxi-tools $ sudo ./sunxi-fel version 
+Warning: no 'soc_sram_info' data for your SoC (id=1663) 
+AWUSBFEX soc=00001663(unknown) 00000001 ver=0001 44 08 scratchpad=00007e00 00000000 00000000
+</span></span></foreignObject></svg></code></pre>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="50" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Using FEL Mode</h1>
+<ul>
+<li>The standard <code>FEL</code> tools do not have support for our chip ID</li>
+<li>After searching through GitHub using the chip ID <a href="https://github.com/Icenowy/sunxi-tools/tree/f1c100s-spiflash">a fork of this repo</a> was found that supports our chip!</li>
+<li>What can we <strong>do</strong> with these tools?</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="51" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Using FEL Mode</h1>
+<ul>
+<li>Using the <code>fel</code> tools, we can:
+<ul>
+<li>Read and write RAM</li>
+<li>Read and write SPI flash memory</li>
+<li>Load arbitrary firmware binaries into RAM</li>
+</ul>
+</li>
+</ul>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>pi@voidstar:~/remove/projects/sf-cabinet/tools/sunxi-tools $ sudo ./sunxi-fel ver
+AWUSBFEX soc=00001663(F1C100s) 00000001 ver=0001 44 08 scratchpad=00007e00 00000000 00000000
+pi@voidstar:~/remove/projects/sf-cabinet/tools/sunxi-tools $ sudo ./sunxi-fel spiflash-info
+Manufacturer: Unknown (1Ch), model: 70h, size: 8388608 bytes.
+pi@voidstar:~/remove/projects/sf-cabinet/tools/sunxi-tools $ sudo ./sunxi-fel spiflash-read 0 0x800000 sf2.bin
+</span></span></foreignObject></svg></code></pre>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="52" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="52" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>FEL Mode: Conclusion</h1>
+<ul>
+<li>Using FEL mode, we can now read and write the SPI flash over USB</li>
+<li>This is much more efficient than using the clips</li>
+<li>This method can also easily be employed by other people for testing!</li>
+<li>We still need to answer the following:
+<ul>
+<li>What OS/RTOS is in use?</li>
+<li>What filesystem is in use?</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="53" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="53" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Understanding the OS</h1>
+<ul>
+<li>Throughout our serial log we see multiple strings such as:
+<ul>
+<li><code>esMODS_MInstall</code></li>
+<li><code>esDEV_Plugin</code></li>
+<li><code>EPOS_MEM_DBG</code></li>
+<li><code>L560(Esh_shell.c):Esh msg: shell main thread: Bye Bye!</code></li>
+</ul>
+</li>
+<li>After researching these debug logs, it appears that the OS in use is ePOS v1.0</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="54" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/epos-architecture.png&quot;);background-size:90%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="54" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="54" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1>ePOS v1.0</h1>
+
+<ul>
+<li>Not much information is available on ePOS v1.0
+<ul>
+<li><a href="https://epos.lisha.ufsc.br/EPOS+Overview">https://epos.lisha.ufsc.br/EPOS+Overview</a></li>
+<li>Embedded Parallel Operating System</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="54" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="55" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="55" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Understanding the Filesystem</h1>
+<ul>
+<li>Based on some strings in the binary, we see references to the following:
+<ul>
+<li><code>MinFS</code></li>
+<li><code>Fat16</code></li>
+</ul>
+</li>
+<li>A <code>Fat16</code> header is present in the image</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="56" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="56" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>MinFS Tables</h1>
+<ul>
+<li>At ROM offset 0x24400, we see the string <code>MINFS</code></li>
+</ul>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>2:4400h: 4D 49 4E 46 53 00 00 01 00 02 00 00 BC 01 00 00  MINFS.......¼... 
+2:4410h: 4E 00 00 00 88 16 00 00 18 A1 7B 00 00 BC 7B 00  N...ˆ....¡{..¼{. 
+</span></span></foreignObject></svg></code></pre>
+<ul>
+<li>What follows this entry is what appears to be a list of files</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="57" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="57" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>2:4600h: bc 03 00 00 f4 02 00 00 00 00 00 00 18 00 01 00  ¼...ô........... 
+2:4610h: 04 00 00 00 61 70 70 73 00 1a 00 00 a0 1d 00 00  ....apps.... ... 
+2:4620h: a0 1d 00 00 24 00 00 00 0e 00 00 00 61 70 70 5f   ...$.......app_ 
+2:4630h: 63 6f 6e 66 69 67 2e 62 69 6e 00 00 a0 37 00 00  config.bin.. 7.. 
+2:4640h: 6a 14 00 00 6a 14 00 00 24 00 00 00 0e 00 00 00  j...j...$....... 
+2:4650h: 61 70 70 5F 63 6F 6E 66 69 67 2E 66 65 78 00 00  app_config.fex.. 
+2:4660h: 18 07 00 00 78 02 00 00 00 00 00 00 18 00 01 00  ....x........... 
+2:4670h: 03 00 00 00 64 72 76 00 0C 4C 00 00 48 C6 06 00  ....drv..L..HÆ.. 
+2:4680h: 48 C6 06 00 1C 00 00 00 08 00 00 00 65 70 6F 73  HÆ..........epos 
+2:4690h: 2E 69 6D 67 90 09 00 00 A0 00 00 00 00 00 00 00  .img�... ....... 
+2:46A0h: 18 00 01 00 04 00 00 00 67 61 6D 65 54 12 07 00  ........gameT... 
+2:46B0h: 50 00 00 00 50 00 00 00 24 00 00 00 0F 00 00 00  P...P...$....... 
+2:46C0h: 6B 65 79 5F 52 45 46 2D 4E 65 77 2E 64 61 74 00  key_REF-New.dat. 
+2:46D0h: A4 12 07 00 50 00 00 00 50 00 00 00 24 00 00 00  ¤...P...P...$... 
+2:46E0h: 0F 00 00 00 6B 65 79 5F 52 45 46 2D 6F 6C 64 2E  ....key_REF-old. 
+2:46F0h: 64 61 74 00 F4 12 07 00 50 00 00 00 50 00 00 00  dat.ô...P...P... 
+2:4700h: 20 00 00 00 0B 00 00 00 6B 65 79 5F 52 45 46 2E   .......key_REF. 
+2:4710h: 64 61 74 00 30 0A 00 00 7C 02 00 00 00 00 00 00  dat.0...|....... 
+2:4720h: 18 00 01 00 03 00 00 00 6D 6F 64 00 44 13 07 00  ........mod.D... 
+2:4730h: F2 0A 00 00 F2 0A 00 00 20 00 00 00 0B 00 00 00  ò...ò... ....... 
+2:4740h: 70 77 6D 5F 63 66 67 2E 69 6E 69 00 38 1E 07 00  pwm_cfg.ini.8... 
+2:4750h: 00 80 02 00 00 80 02 00 20 00 00 00 0B 00 00 00  .€...€.. ....... 
+
+</span></span></foreignObject></svg></code></pre>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="58" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="58" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Analyzying Unknown Headers: Where to Start?</h1>
+<ul>
+<li>When looking at an unknown binary format, look for the following:
+<ul>
+<li>Length fields (before strings etc.)</li>
+<li>Size fields (of entire structure)</li>
+<li>Pointers / Offset values</li>
+</ul>
+</li>
+<li>Examining formats like this takes patience
+<ul>
+<li>Look for a parser if possible<br />
+Google is your friend!</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="59" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="59" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Analyzying Unknown Headers</h1>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>2:4600h: bc 03 00 00 f4 02 00 00 00 00 00 00 18 00 01 00  ¼...ô........... 
+2:4610h: 04 00 00 00 61 70 70 73 00 1a 00 00 a0 1d 00 00  ....apps.... ... 
+2:4620h: a0 1d 00 00 24 00 00 00 0e 00 00 00 61 70 70 5f   ...$.......app_ 
+2:4630h: 63 6f 6e 66 69 67 2e 62 69 6e 00 00 a0 37 00 00  config.bin.. 7.. 
+2:4640h: 6a 14 00 00 6a 14 00 00 24 00 00 00 0e 00 00 00  j...j...$....... 
+
+</span></span></foreignObject></svg></code></pre>
+<p align=center>
+Here is a sample consisting of multiple file entries
+</p>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="60" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="60" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Analyzying Unknown Headers</h1>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>2:4600h: bc 03 00 00 f4 02 00 00 00 00 00 00 18 00 01 00  ¼...ô........... 
+2:4610h: [04] 00 00 00 61 70 70 73 00 1a 00 00 a0 1d 00 00  ....apps.... ... 
+2:4620h: a0 1d 00 00 24 00 00 00 [0e] 00 00 00 61 70 70 5f   ...$.......app_ 
+2:4630h: 63 6f 6e 66 69 67 2e 62 69 6e 00 00 a0 37 00 00  config.bin.. 7.. 
+2:4640h: 6a 14 00 00 6a 14 00 00 24 00 00 00 0e 00 00 00  j...j...$....... 
+
+</span></span></foreignObject></svg></code></pre>
+<p align=center>
+There is what appears to be a length field for the filename
+<br />
+<code>apps</code> is 4 bytes
+<br />
+<code>app_config.bin</code> is 0xE bytes
+</p>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="61" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="61" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Analyzying Unknown Headers</h1>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>2:4600h: bc 03 00 00 f4 02 00 00 00 00 00 00 18 00 01 00  ¼...ô........... 
+2:4610h: 04 00 00 00 61 70 70 73 00 [1a] 00 00 a0 1d 00 00  ....apps.... ... 
+2:4620h: a0 1d 00 00 24 00 00 00 0e 00 00 00 61 70 70 5f   ...$.......app_ 
+2:4630h: 63 6f 6e 66 69 67 2e 62 69 6e 00 00 a0 37 00 00  config.bin.. 7.. 
+2:4640h: 6a 14 00 00 6a 14 00 00 24 00 00 00 0e 00 00 00  j...j...$....... 
+
+</span></span></foreignObject></svg></code></pre>
+<p align=center>
+0x1A is a likely the candidate for a field representing the total length
+</p>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="62" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="62" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Analyzing Unknown Headers</h1>
+<h2>Examine the Data in 010Editor -- Live analysis!</h2>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="63" data-marpit-scope-rPuoeh7w="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="63" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>MinFS Table Entry Structure</h1>
+
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flash Offset</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Raw Size</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Uncompressed Size</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Entry Length</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Flags</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Name Length</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Extra Length</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>Name Length</td>
+</tr>
+<tr>
+<td>Pad</td>
+<td>Entry Length - Name Length - 20</td>
+</tr>
+</tbody>
+</table>
+<p align="center">
+Now that we understand the format, we need to develop a tool to parse it
+</p>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="64" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/kaitai.png&quot;);background-size:75%;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="64" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="64" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1>Kaitai Struct</h1>
+
+<ul>
+<li><a href="https://kaitai.io/">Kaitai Struct</a> is a binary format analysis tool
+<ul>
+<li>Defines a declarative language used to define binary structures</li>
+</ul>
+</li>
+<li>Free and open source</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="64" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="65" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="65" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Kaitai Struct</h1>
+<ul>
+<li>Binary formats can be defined with a <code>.ksy</code> file</li>
+<li>Kaitai includes a visualizer to debug your format</li>
+<li><code>.ksy</code> files are compiled into a language source file
+<ul>
+<li>Python</li>
+<li>Javascript</li>
+<li>C#</li>
+</ul>
+</li>
+<li>Automatically generates classes for parsing your defined data</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="66" data-marpit-scope-MicZakFP="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="66" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Kaitai Struct: Example <code>.ksy</code> file</h1>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>meta:
+  id: gif
+  endian: le
+seq:
+  - id: header
+    type: header
+  - id: logical_screen
+    type: logical_screen
+types:
+  header:
+    seq:
+      - id: magic
+        contents: 'GIF'
+      - id: version
+        size: 3
+  logical_screen:
+    seq:
+      - id: image_width
+        type: u2
+      - id: image_height
+        type: u2
+      - id: flags
+        type: u1
+      - id: bg_color_index
+        type: u1
+      - id: pixel_aspect_ratio
+        type: u1
+</span></span></foreignObject></svg></code></pre>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="67" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="67" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Kaitai Struct: Writing a Template</h1>
+<ul>
+<li>Templates are written in a <code>YAML</code> based format
+<ul>
+<li><a href="https://doc.kaitai.io/user_guide.html">Documentation is here</a></li>
+</ul>
+</li>
+<li>The <code>seq</code> element describes the attributes that make up the structure</li>
+<li>The web-based editor can debug templates
+<ul>
+<li>This can be run locally!</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="68" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="68" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Kaitai Struct: <code>.ksy</code> Attributes</h1>
+<ul>
+<li><code>id</code> is used to give the attribute a name</li>
+<li><code>type</code> gives the attribute a type</li>
+<li>Common types include:
+<ul>
+<li><code>u1</code> Unsigned Byte</li>
+<li><code>u2</code> Unsigned Word</li>
+<li><code>s1</code> Signed byte</li>
+<li><code>s2</code> Signed Word</li>
+</ul>
+</li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="69" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="69" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Kaitai Struct: <code>.ksy</code> Substructures</h1>
+<ul>
+<li>Types are defined with the <code>types</code> element</li>
+</ul>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>seq:
+  - id: track_title
+    type: str_with_len
+types:
+  str_with_len:
+    seq:
+      - id: len
+        type: u4
+      - id: value
+        type: str
+        encoding: UTF-8
+        size: len
+</span></span></foreignObject></svg></code></pre>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="70" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="70" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Kaitai Struct: <code>.ksy</code> Enums</h1>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>seq:
+  - id: protocol
+    type: u1
+    enum: ip_protocol
+enums:
+  ip_protocol:
+    1: icmp
+    6: tcp
+    17: udp
+</span></span></foreignObject></svg></code></pre>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="71" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="71" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Kaitai Struct: <a href="https://github.com/wrongbaud/sf-cabinet/blob/main/binary-templates/minfs.ksy#L15">MinFS Table Header</a></h1>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>  minfs_table_header:
+    doc: &quot;Table header for MINFS partition, points to first entry of file table and provides number of total entries&quot;
+    seq:
+      - id: magic
+        contents: [0x4D ,0x49 ,0x4E ,0x46 ,0x53, 0x00]
+      - id: version
+        type: u2
+      - id: tree_offset
+        type: u4
+      - id: root_size
+        type: u4
+      - id: tree_entries
+        type: u4
+      - id: tree_size
+        type: u4
+      - id: fdata_length
+        type: u4
+      - id: image_size
+        type: u4
+</span></span></foreignObject></svg></code></pre>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="72" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="72" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Kaitai Struct: <a href="https://github.com/wrongbaud/sf-cabinet/blob/main/binary-templates/minfs.ksy#L34">MinFS Table Entry</a></h1>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>  minfs_table_entry:
+    seq:
+      - id: flash_offset
+        type: u4
+      - id: raw_size
+        type: u4
+      - id: original_size
+        type: u4
+      - id: entry_length
+        type: u2
+      - id: flags
+        type: u2
+        enum: file_type
+      - id: name_length
+        type: u2
+      - id: extra_length
+        type: u2
+      - id: name
+        type: str
+        encoding: UTF-8
+        size: name_length
+      - id: pad
+        size: entry_length - name_length - 20
+
+</span></span></foreignObject></svg></code></pre>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="73" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="73" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Kaitai Struct: <a href="https://github.com/wrongbaud/sf-cabinet/blob/main/binary-templates/minfs.ksy#L5">Final Sequence</a></h1>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>seq:
+  - id: minfs_header
+    type: minfs_table_header
+  - id: minfs_pad
+    size: minfs_header.tree_offset-32
+  - id: minfs_file_table
+    type: minfs_table_entry
+    repeat: expr
+    repeat-expr: minfs_header.tree_entries
+</span></span></foreignObject></svg></code></pre>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-marpit-scope-2FD6dcd4="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="74" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/kaitai-web.png&quot;);background-size:80%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="74" data-marpit-scope-2FD6dcd4="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="74" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;" data-marpit-advanced-background="content">
+<h1>Kaitai Struct: Testing the Template</h1>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert" style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="74" data-marpit-pagination-total="81"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="75" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="75" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Kaitai Struct: Parsing the Filesystem</h1>
+<ul>
+<li>Using Kaitai, we can not generate a python library to parse our structure
+<ul>
+<li>This allows us to parse them with the following code quickly:</li>
+</ul>
+</li>
+</ul>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>from minfs import *
+
+target = Minfs.from_file(&quot;/home/wrongbaud/blog/sf-cabinet/output-files/ramdisk.iso&quot;)
+os.mkdir(&quot;/home/wrongbaud/blog/sf-cabinet/ramdisk/&quot;)
+for entry in target.minfs_file_table:
+    if entry.flags != target.FileType.directory:
+        with open(f&quot;/home/wrongbaud/blog/sf-cabinet/ramdisk/{entry.name}&quot;,'wb') as ofile:
+            ofile.write(entry.file_data)
+</span></span></foreignObject></svg></code></pre>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="76" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="76" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Filesystem Analysis: Examining the Binaries</h1>
+<ul>
+<li>After running our script to parse the filesystem, we generate the following files:</li>
+</ul>
+<pre><code class="language-bash"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>pi@voidstar:~/allhandsactive/sshfs/binaries/output-files $ ls
+adec_com.plg   aenc_xxam.drv    cedar.ini        display.drv       home.axf         lang.bin        sf2ceua.zip
+adec_mp3.drv   aply.plg         cedar.mod        enter.wav         home.desktop     lcd_bright.reg  sf2ce.zip
+adec_xxa3.drv  app_config.bin   charset.mod      epos.img          init.axf         logo.bmp        theme.bin
+adec_xxaa.drv  app_config.fex   chord.wav        font16.sft        key_REF.dat      monitor.drv     uart.drv
+adec_xxam.drv  ardr_sw.plg      close_scn.reg    game.wav          key_REF-New.dat  mp.drv          volume.reg
+adec_xxas.drv  arec.plg         contra.fs        game_wl.axf       key_REF-old.dat  orange.mod
+aenc_mp3.drv   auto_off.reg     default.ini      game_wl.axf.lzma  keytest.axf      psr_audio.plg
+aenc_pcm.drv   avs.drv          desktop.mod      game_wl.desktop   keytest.desktop  pwm_cfg.ini
+aenc.plg       bg_default0.jpg  detect_gate.reg  hiscore.dat       keytest.mp3      ramdisk.iso
+
+</span></span></foreignObject></svg></code></pre>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="77" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="77" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Filesystem Analysis: Conclusion</h1>
+<ul>
+<li>Using Kaitai, we were able to develop a parser for this filesystem quickly
+<ul>
+<li>This was much easier than manually defining the structs in python!</li>
+</ul>
+</li>
+<li>With the parser generated by Kaitai, we can extract all of the files from the filesystem!</li>
+<li>The parser also worked on the included ramdisk</li>
+<li>Next steps are to <a href="https://github.com/wrongbaud/sf-cabinet/wiki/file-compression">further investigate their custom compression</a></li>
+</ul>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="78" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="78" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Questions?</h1>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="79" data-marpit-scope-8BSeFjDA="" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="79" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<h1>Binary Image Structure</h1>
+
+<table>
+<thead>
+<tr>
+<th>Start Address</th>
+<th>Component</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>BOOT0</code></td>
+</tr>
+<tr>
+<td>0x6000</td>
+<td><code>BOOT1</code></td>
+</tr>
+<tr>
+<td>0x24400</td>
+<td>MINFS Filesystem</td>
+</tr>
+<tr>
+<td>0x7F000</td>
+<td>FAT16 Image</td>
+</tr>
+</tbody>
+</table>
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="80" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="80" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<footer>All Hands Active Workshop</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="81" data-class="invert" data-paginate="true" data-footer="All Hands Active Workshop" class="invert" data-marpit-pagination="81" data-marpit-pagination-total="81" style="--class:invert;--paginate:true;--footer:All Hands Active Workshop;">
+<footer>All Hands Active Workshop</footer>
+</section>
+<script>!function(){"use strict";const t="marpitSVGPolyfill:setZoomFactor,",e=Symbol();let r,o;function n(n){const i="object"==typeof n&&n.target||document,a="object"==typeof n?n.zoom:n;window[e]||(Object.defineProperty(window,e,{configurable:!0,value:!0}),window.addEventListener("message",(({data:e,origin:r})=>{if(r===window.origin)try{if(e&&"string"==typeof e&&e.startsWith(t)){const[,t]=e.split(","),r=Number.parseFloat(t);Number.isNaN(r)||(o=r)}}catch(t){console.error(t)}})));let l=!1;Array.from(i.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,n,i,s;t.style.transform||(t.style.transform="translateZ(0)");const c=a||o||t.currentScale||1;r!==c&&(r=c,l=c);const d=t.getBoundingClientRect(),{length:u}=t.children;for(let r=0;r<u;r+=1){const o=t.children[r],a=o.getScreenCTM();if(a){const t=null!==(n=null===(e=o.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==n?n:0,r=null!==(s=null===(i=o.y)||void 0===i?void 0:i.baseVal.value)&&void 0!==s?s:0,l=o.firstElementChild,{style:u}=l;u.transformOrigin||(u.transformOrigin=`${-t}px ${-r}px`),u.transform=`scale(${c}) matrix(${a.a}, ${a.b}, ${a.c}, ${a.d}, ${a.e-d.left}, ${a.f-d.top}) translateZ(0.0001px)`}}})),!1!==l&&Array.from(i.querySelectorAll("iframe"),(({contentWindow:e})=>{null==e||e.postMessage(`${t}${l}`,"null"===window.origin?"*":window.origin)}))}r=1,o=void 0;const i=(t,e,r)=>{if(t.getAttribute(e)!==r)return t.setAttribute(e,r),!0};function a({once:t=!1,target:e=document}={}){const r="Apple Computer, Inc."===navigator.vendor?[n]:[];let o=!t;const a=()=>{for(const t of r)t({target:e});!function(t=document){Array.from(t.querySelectorAll('svg[data-marp-fitting="svg"]'),(t=>{var e;const r=t.firstChild,o=r.firstChild,{scrollWidth:n,scrollHeight:a}=o;let l,s=1;if(t.hasAttribute("data-marp-fitting-code")&&(l=null===(e=t.parentElement)||void 0===e?void 0:e.parentElement),t.hasAttribute("data-marp-fitting-math")&&(l=t.parentElement),l){const t=getComputedStyle(l),e=Math.ceil(l.clientWidth-parseFloat(t.paddingLeft||"0")-parseFloat(t.paddingRight||"0"));e&&(s=e)}const c=Math.max(n,s),d=Math.max(a,1),u=`0 0 ${c} ${d}`;i(r,"width",`${c}`),i(r,"height",`${d}`),i(t,"preserveAspectRatio",getComputedStyle(t).getPropertyValue("--preserve-aspect-ratio")||"xMinYMin meet"),i(t,"viewBox",u)&&t.classList.toggle("__reflow__")}))}(e),o&&window.requestAnimationFrame(a)};return a(),()=>{o=!1}}const l=Symbol(),s=document.currentScript;((t=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(t[l])return t[l];const e=a({target:t}),r=()=>{e(),delete t[l]};Object.defineProperty(t,l,{configurable:!0,value:r})})(s?s.getRootNode():document)}();
+</script></foreignObject></svg></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@1.1.1/lib/bespoke.js.LICENSE.txt */
+!function(){"use strict";var e=function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),a=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,(function(e){return"SCRIPT"!==e.nodeName})),s={},i=function(e,t){return(t=t||{}).index=a.indexOf(e),t.slide=e,t},o=function(e,t){s[e]=(s[e]||[]).filter((function(e){return e!==t}))},l=function(e,t){return(s[e]||[]).reduce((function(e,n){return e&&!1!==n(t)}),!0)},c=function(e,t){a[e]&&(n&&l("deactivate",i(n,t)),n=a[e],l("activate",i(n,t)))},d=function(e,t){var r=a.indexOf(n)+e;l(e>0?"next":"prev",i(n,t))&&c(r,t)},u={off:o,on:function(e,t){return(s[e]||(s[e]=[])).push(t),o.bind(null,e,t)},fire:l,slide:function(e,t){if(!arguments.length)return a.indexOf(n);l("slide",i(a[e],t))&&c(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:a,destroy:function(e){l("destroy",i(n,e)),s={}}};return(t||[]).forEach((function(e){e(u)})),n||c(0),u};function t(e){e.parent.classList.add("bespoke-marp-parent"),e.slides.forEach((e=>e.classList.add("bespoke-marp-slide"))),e.on("activate",(t=>{const n=t.slide,r=!n.classList.contains("bespoke-marp-active");e.slides.forEach((e=>{e.classList.remove("bespoke-marp-active"),e.setAttribute("aria-hidden","true")})),n.classList.add("bespoke-marp-active"),n.removeAttribute("aria-hidden"),r&&(n.classList.add("bespoke-marp-active-ready"),document.body.clientHeight,n.classList.remove("bespoke-marp-active-ready"))}))}function n(e){let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map((e=>[null,...e.querySelectorAll("[data-marpit-fragment]")]))});const r=r=>void 0!==e.fragments[t][n+r],a=(r,a)=>{t=r,n=a,e.fragments.forEach(((e,t)=>{e.forEach(((e,n)=>{if(null==e)return;const s=t<r||t===r&&n<=a;e.setAttribute("data-bespoke-marp-fragment",s?"active":"inactive"),t===r&&n===a?e.setAttribute("data-bespoke-marp-current-fragment","current"):e.removeAttribute("data-bespoke-marp-current-fragment")}))})),e.fragmentIndex=a;const s={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:a};e.fire("fragment",s)};e.on("next",(({fragment:s=!0})=>{if(s){if(r(1))return a(t,n+1),!1;const s=t+1;e.fragments[s]&&a(s,0)}else{const r=e.fragments[t].length;if(n+1<r)return a(t,r-1),!1;const s=e.fragments[t+1];s&&a(t+1,s.length-1)}})),e.on("prev",(({fragment:s=!0})=>{if(r(-1)&&s)return a(t,n-1),!1;const i=t-1;e.fragments[i]&&a(i,e.fragments[i].length-1)})),e.on("slide",(({index:t,fragment:n})=>{let r=0;if(void 0!==n){const a=e.fragments[t];if(a){const{length:e}=a;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}a(t,r)})),a(0,0)}var r,a={exports:{}};r=a,function(){var e="undefined"!=typeof window&&void 0!==window.document?window.document:{},t=r.exports,n=function(){for(var t,n=[["requestFullscreen","exitFullscreen","fullscreenElement","fullscreenEnabled","fullscreenchange","fullscreenerror"],["webkitRequestFullscreen","webkitExitFullscreen","webkitFullscreenElement","webkitFullscreenEnabled","webkitfullscreenchange","webkitfullscreenerror"],["webkitRequestFullScreen","webkitCancelFullScreen","webkitCurrentFullScreenElement","webkitCancelFullScreen","webkitfullscreenchange","webkitfullscreenerror"],["mozRequestFullScreen","mozCancelFullScreen","mozFullScreenElement","mozFullScreenEnabled","mozfullscreenchange","mozfullscreenerror"],["msRequestFullscreen","msExitFullscreen","msFullscreenElement","msFullscreenEnabled","MSFullscreenChange","MSFullscreenError"]],r=0,a=n.length,s={};r<a;r++)if((t=n[r])&&t[1]in e){for(r=0;r<t.length;r++)s[n[0][r]]=t[r];return s}return!1}(),a={change:n.fullscreenchange,error:n.fullscreenerror},s={request:function(t,r){return new Promise(function(a,s){var i=function(){this.off("change",i),a()}.bind(this);this.on("change",i);var o=(t=t||e.documentElement)[n.requestFullscreen](r);o instanceof Promise&&o.then(i).catch(s)}.bind(this))},exit:function(){return new Promise(function(t,r){if(this.isFullscreen){var a=function(){this.off("change",a),t()}.bind(this);this.on("change",a);var s=e[n.exitFullscreen]();s instanceof Promise&&s.then(a).catch(r)}else t()}.bind(this))},toggle:function(e,t){return this.isFullscreen?this.exit():this.request(e,t)},onchange:function(e){this.on("change",e)},onerror:function(e){this.on("error",e)},on:function(t,n){var r=a[t];r&&e.addEventListener(r,n,!1)},off:function(t,n){var r=a[t];r&&e.removeEventListener(r,n,!1)},raw:n};n?(Object.defineProperties(s,{isFullscreen:{get:function(){return Boolean(e[n.fullscreenElement])}},element:{enumerable:!0,get:function(){return e[n.fullscreenElement]}},isEnabled:{enumerable:!0,get:function(){return Boolean(e[n.fullscreenEnabled])}}}),t?r.exports=s:window.screenfull=s):t?r.exports={isEnabled:!1}:window.screenfull={isEnabled:!1}}();var s=a.exports;function i(e){e.fullscreen=()=>{s.isEnabled&&s.toggle(document.body)},document.addEventListener("keydown",(t=>{"f"!==t.key&&"F11"!==t.key||t.altKey||t.ctrlKey||t.metaKey||!s.isEnabled||(e.fullscreen(),t.preventDefault())}))}function o(e=2e3){return t=>{let n;function r(){n&&clearTimeout(n),n=setTimeout((()=>{t.parent.classList.add("bespoke-marp-inactive"),t.fire("marp-inactive")}),e),t.parent.classList.contains("bespoke-marp-inactive")&&(t.parent.classList.remove("bespoke-marp-inactive"),t.fire("marp-active"))}document.addEventListener("mousedown",r),document.addEventListener("mousemove",r),document.addEventListener("touchend",r),setTimeout(r,0)}}const l=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"];function c(e){e.parent.addEventListener("keydown",(e=>{if(!e.target)return;const t=e.target;(l.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()}))}function d(e){window.addEventListener("load",(()=>{for(const t of e.slides){const e=t.querySelector("[data-marp-fitting]")?"":"hideable";t.setAttribute("data-bespoke-marp-load",e)}}))}var u;function f({interval:e=250}={}){return t=>{document.addEventListener("keydown",(e=>{if(" "===e.key&&e.shiftKey)t.prev();else if("ArrowLeft"===e.key||"ArrowUp"===e.key||"PageUp"===e.key)t.prev({fragment:!e.shiftKey});else if(" "!==e.key||e.shiftKey)if("ArrowRight"===e.key||"ArrowDown"===e.key||"PageDown"===e.key)t.next({fragment:!e.shiftKey});else if("End"===e.key)t.slide(t.slides.length-1,{fragment:-1});else{if("Home"!==e.key)return;t.slide(0)}else t.next();e.preventDefault()}));let n,r,a=0;t.parent.addEventListener("wheel",(s=>{let i=!1;const o=(e,t)=>{e&&(i=i||function(e,t){return function(e,t){const n=t===u.X?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]}(e,t)&&function(e,t){const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r}(getComputedStyle(e),t)}(e,t)),(null==e?void 0:e.parentElement)&&o(e.parentElement,t)};if(0!==s.deltaX&&o(s.target,u.X),0!==s.deltaY&&o(s.target,u.Y),i)return;s.preventDefault();const l=Math.sqrt(Math.pow(s.deltaX,2)+Math.pow(s.deltaY,2));if(void 0!==s.wheelDelta){if(void 0===s.webkitForce&&Math.abs(s.wheelDelta)<40)return;if(s.deltaMode===s.DOM_DELTA_PIXEL&&l<4)return}else if(s.deltaMode===s.DOM_DELTA_PIXEL&&l<12)return;r&&clearTimeout(r),r=setTimeout((()=>{n=0}),e);const c=Date.now()-a<e,d=l<=n;if(n=l,c||d)return;let f;(s.deltaX>0||s.deltaY>0)&&(f="next"),(s.deltaX<0||s.deltaY<0)&&(f="prev"),f&&(t[f](),a=Date.now())}))}}!function(e){e.X="X",e.Y="Y"}(u||(u={}));const p=(...e)=>history.replaceState(...e),m="data-bespoke-view",g="presenter",h="next",v=["",g,h],b=(e,{protocol:t,host:n,pathname:r,hash:a}=location)=>{const s=e.toString();return`${t}//${n}${r}${s?"?":""}${s}${a}`},w=()=>{const e=document.body.getAttribute(m);if(v.includes(e))return e;throw new Error("View mode is not assigned.")},y=e=>new URLSearchParams(location.search).get(e),k=(e,t={})=>{var n;const r=Object.assign({location:location,setter:p},t),a=new URLSearchParams(r.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?a.set(t,n):a.delete(t)}try{r.setter(Object.assign({},null!==(n=window.history.state)&&void 0!==n?n:{}),"",b(a,r.location))}catch(e){console.error(e)}},E={available:(()=>{try{return localStorage.setItem("bespoke-marp","bespoke-marp"),localStorage.removeItem("bespoke-marp"),!0}catch(e){return console.warn("Warning: Using localStorage is restricted in the current host so some features may not work."),!1}})(),get:e=>{try{return localStorage.getItem(e)}catch(e){return null}},set:(e,t)=>{try{return localStorage.setItem(e,t),!0}catch(e){return!1}},remove:e=>{try{return localStorage.removeItem(e),!0}catch(e){return!1}}};function x(e=".bespoke-marp-osc"){const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[data-bespoke-marp-osc=${JSON.stringify(e)}]`).forEach(n)};return s.isEnabled||n("fullscreen",(e=>e.style.display="none")),E.available||n("presenter",(e=>{e.disabled=!0,e.title="Presenter view is disabled due to restricted localStorage."})),e=>{t.addEventListener("click",(t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;switch(n&&t.target.blur(),n){case"next":e.next({fragment:!t.shiftKey});break;case"prev":e.prev({fragment:!t.shiftKey});break;case"fullscreen":"function"==typeof e.fullscreen&&s.isEnabled&&e.fullscreen();break;case"presenter":e.openPresenterView()}}})),e.parent.appendChild(t),e.on("activate",(({index:t})=>{n("page",(n=>n.textContent=`Page ${t+1} of ${e.slides.length}`))})),e.on("fragment",(({index:t,fragments:r,fragmentIndex:a})=>{n("prev",(e=>e.disabled=0===t&&0===a)),n("next",(n=>n.disabled=t===e.slides.length-1&&a===r.length-1))})),e.on("marp-active",(()=>t.removeAttribute("aria-hidden"))),e.on("marp-inactive",(()=>t.setAttribute("aria-hidden","true"))),s.isEnabled&&s.onchange((()=>n("fullscreen",(e=>e.classList.toggle("exit",s.isEnabled&&s.isFullscreen)))))}}function L(e){window.addEventListener("message",(t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let a=Number.parseInt(t,10),s=Number.parseInt(n,10)+1;s>=e.fragments[a].length&&(a+=1,s=0),e.slide(a,{fragment:s})}}))}function S(e){if(!(e=>e.syncKey&&"string"==typeof e.syncKey)(e))throw new Error("The current instance of Bespoke.js is invalid for Marp bespoke presenter plugin.");Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:M},presenterUrl:{enumerable:!0,get:I}}),E.available&&document.addEventListener("keydown",(t=>{"p"!==t.key||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())}))}function M(){const e=Math.max(Math.floor(.85*window.innerWidth),640),t=Math.max(Math.floor(.85*window.innerHeight),360);return window.open(this.presenterUrl,`bespoke-marp-presenter-${this.syncKey}`,`width=${e},height=${t},menubar=no,toolbar=no`)}function I(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),b(e)}var P=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"];let O=e=>String(e).replace(/[&<>"']/g,(e=>`&${F[e]};`)),F={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},$="dangerouslySetInnerHTML",A={className:"class",htmlFor:"for"},T={};function q(e,t){let n=[],r="";t=t||{};for(let e=arguments.length;e-- >2;)n.push(arguments[e]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(let e in t)!1!==t[e]&&null!=t[e]&&e!==$&&(r+=` ${A[e]?A[e]:O(e)}="${O(t[e])}"`);r+=">"}if(-1===P.indexOf(e)){if(t[$])r+=t[$].__html;else for(;n.length;){let e=n.pop();if(e)if(e.pop)for(let t=e.length;t--;)n.push(e[t]);else r+=!0===T[e]?e:O(e)}r+=e?`</${e}>`:""}return T[r]=!0,r}const K=({children:e})=>q(null,null,...e),N="bespoke-marp-presenter-container",C="bespoke-marp-presenter-next",D="bespoke-marp-presenter-next-container",j="bespoke-marp-presenter-note-container",X="bespoke-marp-presenter-info-container",R="bespoke-marp-presenter-info-page",U="bespoke-marp-presenter-info-page-text",B="bespoke-marp-presenter-info-page-prev",V="bespoke-marp-presenter-info-page-next",Y="bespoke-marp-presenter-info-time",H="bespoke-marp-presenter-info-timer";function z(e){const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=N,t.appendChild(e),t.insertAdjacentHTML("beforeend",q(K,null,q("div",{class:D},q("iframe",{class:C,src:"?view=next"})),q("div",{class:j}),q("div",{class:X},q("div",{class:R},q("button",{class:B,tabindex:"-1",title:"Previous"},"Previous"),q("span",{class:U}),q("button",{class:V,tabindex:"-1",title:"Next"},"Next")),q("time",{class:Y,title:"Current time"}),q("div",{class:H})))),t})(e.parent)),(e=>{r(D).addEventListener("click",(()=>e.next()));const t=r(C),n=(a=t,(e,t)=>{var n;return null===(n=a.contentWindow)||void 0===n?void 0:n.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin)});var a;t.addEventListener("load",(()=>{r(D).classList.add("active"),n(e.slide(),e.fragmentIndex),e.on("fragment",(({index:e,fragmentIndex:t})=>n(e,t)))}));const s=document.querySelectorAll(".bespoke-marp-note");s.forEach((e=>{e.addEventListener("keydown",(e=>e.stopPropagation())),r(j).appendChild(e)})),e.on("activate",(()=>s.forEach((t=>t.classList.toggle("active",t.dataset.index==e.slide()))))),e.on("activate",(({index:t})=>{r(U).textContent=`${t+1} / ${e.slides.length}`}));const i=r(B),o=r(V);i.addEventListener("click",(t=>{i.blur(),e.prev({fragment:!t.shiftKey})})),o.addEventListener("click",(t=>{o.blur(),e.next({fragment:!t.shiftKey})})),e.on("fragment",(({index:t,fragments:n,fragmentIndex:r})=>{i.disabled=0===t&&0===r,o.disabled=t===e.slides.length-1&&r===n.length-1}));const l=()=>r(Y).textContent=(new Date).toLocaleTimeString();l(),setInterval(l,250)})(e)}function _(e){const t=w();return t===h&&e.appendChild(document.createElement("span")),{"":S,[g]:z,[h]:L}[t]}function J(e){e.on("activate",(t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach((n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"}))}))}const W=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t};function G(e={}){const t=Object.assign({history:!0},e);return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},a=(t={fragment:!0})=>{((t,n)=>{const{fragments:r,slides:a}=e,s=Math.max(0,Math.min(t,a.length-1)),i=Math.max(0,Math.min(n||0,r[s].length-1));s===e.slide()&&i===e.fragmentIndex||e.slide(s,{fragment:i})})((W(location.hash.slice(1))||1)-1,t.fragment?W(y("f")||""):null)};e.on("fragment",(({index:e,fragmentIndex:r})=>{n||k({f:0===r||r.toString()},{location:Object.assign(Object.assign({},location),{hash:`#${e+1}`}),setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})})),setTimeout((()=>{a(),window.addEventListener("hashchange",(()=>r((()=>{a({fragment:!1}),k({f:void 0})})))),window.addEventListener("popstate",(()=>{n||r((()=>a()))})),n=!1}),0)}}function Q(e={}){var t;const n=e.key||(null===(t=window.history.state)||void 0===t?void 0:t.marpBespokeSyncKey)||Math.random().toString(36).slice(2),r=`bespoke-marp-sync-${n}`;var a;a={marpBespokeSyncKey:n},k({},{setter:(e,...t)=>p(Object.assign(Object.assign({},e),a),...t)});const s=()=>{const e=E.get(r);return e?JSON.parse(e):Object.create(null)},i=e=>{const t=s(),n=Object.assign(Object.assign({},t),e(t));return E.set(r,JSON.stringify(n)),n},o=()=>{window.removeEventListener("pageshow",o),i((e=>({reference:(e.reference||0)+1})))};return e=>{o(),Object.defineProperty(e,"syncKey",{value:n,enumerable:!0});let t=!0;setTimeout((()=>{e.on("fragment",(e=>{t&&i((()=>({index:e.index,fragmentIndex:e.fragmentIndex})))}))}),0),window.addEventListener("storage",(n=>{if(n.key===r&&n.oldValue&&n.newValue){const r=JSON.parse(n.oldValue),a=JSON.parse(n.newValue);if(r.index!==a.index||r.fragmentIndex!==a.fragmentIndex)try{t=!1,e.slide(a.index,{fragment:a.fragmentIndex})}finally{t=!0}}}));const a=()=>{const{reference:e}=s();void 0===e||e<=1?E.remove(r):i((()=>({reference:e-1})))};window.addEventListener("pagehide",(e=>{e.persisted&&window.addEventListener("pageshow",o),a()})),e.on("destroy",a)}}function Z({slope:e=Math.tan(-35*Math.PI/180),swipeThreshold:t=30}={}){return n=>{let r;const a=n.parent,s=e=>{const t=a.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};a.addEventListener("touchstart",(e=>{r=1===e.touches.length?s(e.touches[0]):void 0}),{passive:!0}),a.addEventListener("touchmove",(e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=s(e.touches[0]),n=t.x-r.x,a=t.y-r.y;r.delta=Math.sqrt(Math.pow(Math.abs(n),2)+Math.pow(Math.abs(a),2)),r.radian=Math.atan2(n,a)}else r=void 0})),a.addEventListener("touchend",(a=>{if(r){if(r.delta&&r.delta>=t&&r.radian){let t=r.radian-e;t=(t+Math.PI)%(2*Math.PI)-Math.PI,n[t<0?"next":"prev"](),a.stopPropagation()}r=void 0}}),{passive:!0})}}function ee(e,t,n,r){return new(n||(n=Promise))((function(a,s){function i(e){try{l(r.next(e))}catch(e){s(e)}}function o(e){try{l(r.throw(e))}catch(e){s(e)}}function l(e){var t;e.done?a(e.value):(t=e.value,t instanceof n?t:new n((function(e){e(t)}))).then(i,o)}l((r=r.apply(e,t||[])).next())}))}let te;const ne=()=>(void 0===te&&(te="wakeLock"in navigator&&navigator.wakeLock),te),re=()=>ee(void 0,void 0,void 0,(function*(){const e=ne();if(e)try{return yield e.request("screen")}catch(e){console.warn(e)}return null}));function ae(){return ee(this,void 0,void 0,(function*(){if(!ne())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&re()};return document.addEventListener("visibilitychange",t),document.addEventListener("fullscreenchange",t),e=yield re(),e}))}!function(r=document.getElementById("p")){document.body.setAttribute(m,(()=>{const e=y("view");return e===h||e===g?e:""})());const a=(e=>{const t=y(e);return k({[e]:void 0}),t})("sync")||void 0,s=!1,l=!0;e(r,((...e)=>{const t=v.findIndex((e=>w()===e));if(t<0)throw new Error("Invalid view");return e.map((([e,n])=>e[t]&&n)).filter((e=>e))})([[l,l,s],Q({key:a})],[[l,l,l],_(r)],[[l,l,s],c],[[l,l,l],t],[[l,s,s],o()],[[l,l,l],d],[[l,l,l],G({history:!1})],[[l,l,s],f()],[[l,l,s],i],[[l,s,s],J],[[l,l,s],Z()],[[l,s,s],x()],[[l,l,l],n],[[l,l,s],ae]))}()}();</script></body></html>
