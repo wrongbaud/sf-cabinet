@@ -12,8 +12,9 @@ img[alt~="center"] {
 }
 </style>
 
-# Super Street Fighter 2: Kaitai Edition
-## An Exercise in Reverse Engineering
+# Hacking Hadoukens
+## Reverse Engineering a Street Fighter Two Cabinet
+
 
 ---
 
@@ -344,32 +345,6 @@ p {
 ![bg right:30% auto ](images/uart1.png)
 
 ---
-# UART: Common Usages
-
-- UART is often used to implement debug consoles 
-    - Commonly seen on routers
-
-- Microcontrollers also use UART for IPC purposes and general communications
-
-- Be wary of missing pull up / pull down resistors near UART headers
-
-- Debug consoles can often lead to gaining shell access to platforms
-
----
-
-# UART: Speed
-
-- The rate of data transferred by a UART is measured in bits per second
-  - This is commonly refered to as the <b><u>baud rate</u></b>
-- Both components must agree on this speed ahead of time
-- Some common baud rates include:
-  - 115200
-  - 38600
-  - 480600
-  - 9600
-  - 1200
-
----
 
 # UART: Pi Interfacing
 - ```TXD0/IO14``` = Transmit
@@ -462,6 +437,7 @@ EPOS_MEM_DBG ON?, log_mem:0x0
   - The SF2 ROM is likely a standard MAME ROM
 - The application being used is [FB Alpha](https://github.com/barry65536/FBAlpha)
   - ```FB Alpha``` is an [arcade emulator!](https://www.fbalpha.com/)
+- To learn more, we will need to try to dump the flash
 
 ---
 
@@ -572,15 +548,6 @@ The host controls the <b>CS</b>, <b>CLK</b> and <b>SDO</b> lines. The target res
   - Path to SPI device
 - ```spispeed=800```
   - Clock speed to be used (in Khz)
-
----
-
-# SPI Tools: ```flashrom```
-## Read and Write Operations
-
-- ```flashrom``` can perform read and write operations
-  - ```-w [FILENAME]``` is used for write operations
-  - ```-r [FILENAME]``` is used for read operations
 
 ---
 
@@ -945,7 +912,10 @@ AWUSBFEX soc=00001663(unknown) 00000001 ver=0001 44 08 scratchpad=00007e00 00000
 ---
 
 # Using FEL Mode
-
+- Using the ```fel``` tools we can:
+  - Read and write RAM
+  - Read and write SPI flash memory
+  - Load arbitrary firmware binaries into RAM
 ```
 pi@voidstar:~/remove/projects/sf-cabinet/tools/sunxi-tools $ sudo ./sunxi-fel ver
 AWUSBFEX soc=00001663(F1C100s) 00000001 ver=0001 44 08 scratchpad=00007e00 00000000 00000000
@@ -1036,7 +1006,7 @@ pi@voidstar:~/remove/projects/sf-cabinet/tools/sunxi-tools $ sudo ./sunxi-fel sp
 
 ---
 
-# Unknown Headers: Where to Start?
+# Analyzying Unknown Headers: Where to Start?
 
 - When looking at an unknown binary format, look for the following:
   - Length fields (before strings etc)
@@ -1048,7 +1018,7 @@ pi@voidstar:~/remove/projects/sf-cabinet/tools/sunxi-tools $ sudo ./sunxi-fel sp
 
 ---
 
-# Unknown Headers
+# Analyzying Unknown Headers
 
 ```
 2:4600h: bc 03 00 00 f4 02 00 00 00 00 00 00 18 00 01 00  ¼...ô........... 
@@ -1065,7 +1035,7 @@ Here is a sample, consisting of multiple file entries
 
 ---
 
-# Unknown Headers
+# Analyzying Unknown Headers
 
 ```
 2:4600h: bc 03 00 00 f4 02 00 00 00 00 00 00 18 00 01 00  ¼...ô........... 
@@ -1087,7 +1057,7 @@ There is what appears to be a length field for the filename
 
 ---
 
-# Unknown Headers
+# Analyzying Unknown Headers
 
 ```
 2:4600h: bc 03 00 00 f4 02 00 00 00 00 00 00 18 00 01 00  ¼...ô........... 
@@ -1104,7 +1074,37 @@ There is what appears to be a length field for the filename
 
 ---
 
+# Analyzing Unknown Headers
 
+## Examine the Data in 010Editor -- Live analysis!
+
+---
+
+# MinFS Table Entry Structure
+<style scoped>
+  table{
+    margin-left: 300px;
+    margin-right: auto;
+    font-size: 19px;
+    text-align: center;
+  }
+  </style>
+
+| Element | Size | 
+| ------- | ---- | 
+| Flash Offset | 4 | 
+| Raw Size | 4 | 
+| Uncompressed Size | 4 | 
+| Entry Length | 2 | 
+| Flags | 2 | 
+| Name Length | 2 | 
+| Extra Length | 2 |
+| Name | Name Length | 
+| Pad | Entry Length - Name Length - 20 | 
+
+<p align="center">
+Now that we understand the format, we need to develop a tool to parse it
+</p>
 
 ---
 
@@ -1171,21 +1171,197 @@ types:
 
 # Kaitai Struct: Writing a Template
 
+- Templates are written in a ```YAML``` based format
+    - [Documentation is here](https://doc.kaitai.io/user_guide.html)
+/bin/bash: j:w: command not found
+- The ```seq``` element is used to describe the attributes that make up the structure
+- Templates can be debugged in the web based editor
+    - This can be run locally!
+
 ---
 
-# Kaitai Struct: ```.ksy``` Data types
+# Kaitai Struct: ```.ksy``` Attributes
+
+- ```id``` is used to give the attribute a name
+- ```type``` gives the attribute a type
+- Common types include:
+    - ```u1``` Unsigned Byte
+    - ```u2``` Unsigned Word
+    - ```s1``` Signed byte
+    - ```s2``` Signed Word
 
 ---
 
-# Kaitai Struct: ```.ksy``` classes
+# Kaitai Struct: ```.ksy``` Substructures
+
+- Types can be defined with the ```types``` element
+
+```
+seq:
+  - id: track_title
+    type: str_with_len
+types:
+  str_with_len:
+    seq:
+      - id: len
+        type: u4
+      - id: value
+        type: str
+        encoding: UTF-8
+        size: len
+```
 
 ---
 
 # Kaitai Struct: ```.ksy``` Enums
 
+```
+seq:
+  - id: protocol
+    type: u1
+    enum: ip_protocol
+enums:
+  ip_protocol:
+    1: icmp
+    6: tcp
+    17: udp
+```
+
 ---
 
+# Kaitai Struct: [MinFS Table Header](https://github.com/wrongbaud/sf-cabinet/blob/main/binary-templates/minfs.ksy#L15)
+
+```
+  minfs_table_header:
+    doc: "Table header for MINFS partition, points to first entry of file table and provides number of total entries"
+    seq:
+      - id: magic
+        contents: [0x4D ,0x49 ,0x4E ,0x46 ,0x53, 0x00]
+      - id: version
+        type: u2
+      - id: tree_offset
+        type: u4
+      - id: root_size
+        type: u4
+      - id: tree_entries
+        type: u4
+      - id: tree_size
+        type: u4
+      - id: fdata_length
+        type: u4
+      - id: image_size
+        type: u4
+```
 
 ---
 
+# Kaitai Struct: [MinFS Table Entry](https://github.com/wrongbaud/sf-cabinet/blob/main/binary-templates/minfs.ksy#L34)
+
+```
+  minfs_table_entry:
+    seq:
+      - id: flash_offset
+        type: u4
+      - id: raw_size
+        type: u4
+      - id: original_size
+        type: u4
+      - id: entry_length
+        type: u2
+      - id: flags
+        type: u2
+        enum: file_type
+      - id: name_length
+        type: u2
+      - id: extra_length
+        type: u2
+      - id: name
+        type: str
+        encoding: UTF-8
+        size: name_length
+      - id: pad
+        size: entry_length - name_length - 20
+
+```
+
 ---
+
+# Kaitai Struct: [Final Sequence](https://github.com/wrongbaud/sf-cabinet/blob/main/binary-templates/minfs.ksy#L5)
+
+```
+seq:
+  - id: minfs_header
+    type: minfs_table_header
+  - id: minfs_pad
+    size: minfs_header.tree_offset-32
+  - id: minfs_file_table
+    type: minfs_table_entry
+    repeat: expr
+    repeat-expr: minfs_header.tree_entries
+```
+
+---
+
+# Kaitai Struct: Testing the Template
+
+
+# TODO Screenshot of web viewer
+
+---
+
+# Kaitai Struct: Parsing the Filesystem
+
+- Using Kaitai we can not generate a python library to parse our structure
+    - This allows us to easily parse them with the following code:
+
+```
+from minfs import *
+
+target = Minfs.from_file("/home/wrongbaud/blog/sf-cabinet/output-files/ramdisk.iso")
+os.mkdir("/home/wrongbaud/blog/sf-cabinet/ramdisk/")
+for entry in target.minfs_file_table:
+    if entry.flags != target.FileType.directory:
+        with open(f"/home/wrongbaud/blog/sf-cabinet/ramdisk/{entry.name}",'wb') as ofile:
+            ofile.write(entry.file_data)
+```
+
+---
+
+# Filesystem Analysis: Examining the Binaries
+
+- After running our script to parse the filesystem, we generate the following files:
+```bash
+```
+
+---
+
+# Filesystem Analysis: Conclusion
+
+- Using Kaitai we were able to quickly develop a parser for this filesystem
+    - This was much easier than manually defining the structs in python!
+- With the parser generated by Kaitai, we were able to extract all of the files from the filesystem!
+- Next we need to examine our extracted contents
+
+---
+
+# Binary Image Structure 
+
+<style scoped>
+  table{
+    margin-left: 300px;
+    margin-right: center;
+    text-align: center;
+  }
+  th{
+    text-align: center;
+  }
+</style>
+
+
+| Start Address | Component | 
+| ------------- | --------- | 
+| 0 | ```BOOT0``` | 
+| 0x6000 | ```BOOT1``` | 
+| 0x24400 | MINFS Filesystem | 
+
+--- 
