@@ -586,7 +586,45 @@ The host controls the <b>CS</b>, <b>CLK</b> and <b>SDO</b> lines. The target res
 
 # SPI Flash Extraction:
 
-TODO: PICTURE OF CLIP ON CAB PCB
+<style scoped>
+h1 {
+  position: absolute;
+  left: 80px;
+  top: 20px;
+  right: 80px;
+  height: 70px;
+  line-height: 70px;
+}
+p {
+  position: absolute;
+  left: 80px;
+  top: 600px;
+  right: 80px;
+  height: 70px;
+  line-height: 30px;
+}
+</style>
+
+
+![bg 50%](images/pcb-with-clip.jpg)
+
+
+---
+
+# SPI Flash Extraction
+
+![bg right 80%](images/spi_clip_wiring_v2_no_bb_bb.png)
+
+
+
+| Raspberry Pi GPIO | TSOP8 Clip | 
+| ------ | ------------------ |
+| CE0 / IO8 | 1| 
+| SDI/IO9 | 2 | 
+| GND | 4 | 
+| SDO/IO10 | 5 | 
+| CLK/IO11 |6 | 
+| 3V3 | 8 | 
 
 ---
 
@@ -778,15 +816,223 @@ The first byte sequence - <code>a8 00 00 ea</code> is an ARM branch instruction!
 
 # SPI Flash Analysis
 
-- Among the plaintext output is what appears to be a list of files:
+- Now that the SPI flash has been extracted, we will attempt to understand the boot process
+  - How many stages are there in the boot process?
+  - Are there any stages that we can interrupt?
+- We also need to answer the following questions:
+  - What OS is in use? (if any)
+  - What filesystem(s) are used?
+
+---
+
+# SPI Flash Analysis
+
+![bg right 80%](images/boot-strings.png)
+- Here we see some debug strings 
+  - Are these present in our serial logs?
+
+---
+
+# Understanding the Boot Process
+
 
 ```
-TODO PUT FILE LISTING HERE
+BOOT0 is starting 
+init dram , base        is 0x80000000 
+init dram , clk         is 156 
+init dram , access_mode is 1 
+init dram , cs_num      is 0x55000001 
+init dram , ddr8_remap  is 0 
+init dram , sdr_ddr     is 1 
+init dram , bwidth      is 16 
+init dram , col_width   is 10 
+init dram , row_width   is 13 
+init dram , bank_size   is 4 
+init dram , cas         is 3 
+init dram , size        is 120 
+dram init successed,size is 64 
+jump to BOOT1 
+DBG: boot1 starting! 
+DBG: init key OK 
+before check_key_to_fel. 
 ```
 
 ---
 
-# MinFS Example File Entry
+# Understanding the Boot Process
+
+- After further analysis of the flash, there are two possible boot images:
+  - ```eGON.BT0``` at address ```0```
+  - ```eGON.BT1``` at address ```0x6000```
+- In both boot images, there are references to jump to ```fel```
+- After researching ```FEL``` we find the following on the [Allwinner website](https://linux-sunxi.org/FEL)
+
+```
+FEL is a low-level subroutine contained in the BootROM on Allwinner devices. It is used for initial programming and recovery of devices using USB. 
+```
+
+---
+
+# Understanding FEL Mode
+
+- FEL is a low-level subroutine contained in the BootROM on Allwinner devices.
+  - It is used for initial programming and recovery of devices using USB.
+- Devices must enter ```FEL``` mode, causing them to present themselves as a USB device
+  - ```FEL``` mode is entered by holding certain IO lines on boot
+- **If** this mode is present on our cabinet, how might we trigger it? 
+
+---
+
+# Understanding FEL Mode
+
+- After testing, it was discovered that holding volume down during startup causes ```FEL``` mode to be entered
+
+```
+[129080.108765] usb 1-1.1: new full-speed USB device number 16 using xhci_hcd
+[129080.251695] usb 1-1.1: New USB device found, idVendor=1f3a, idProduct=efe8, bcdDevice= 2.b3
+[129080.251718] usb 1-1.1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+```
+
+---
+
+# SPI Flash: Analysis
+
+- Based on our initial analysis of the SPI flash we know the following:
+  - There is a two stage bootloader
+  - ```FEL``` mode can be entered on startup
+  - The CPU is an Allwinner Series CPU
+  - FB Alpha Emulation software is in use
+  - The SF2 ROM in use is likely a standard one
+    - It matches the same structure as the typical MAME ROM
+
+---
+
+# Using FEL Mode
+
+- We can enter ```FEL``` mode, causing the cabinet to present itself as a USB device
+  - What can we do with this?
+
+```
+before check_key_to_fel. 
+===     key_type =1    === 
+port0:1 
+port_num0:0 
+key_value:0 
+times up, detect io jump to fel. 
+key found, jump to fel
+```
+
+---
+# Using FEL Mode
+
+- In order to communciate with the device in ```FEL``` mode, we need to build the ```sunxi-tools```
+- After building this software, the ```FEL``` version can be queried as shown below:
+
+```
+pi@voidstar:~/sf2/sunxi-tools $ sudo ./sunxi-fel version 
+Warning: no 'soc_sram_info' data for your SoC (id=1663) 
+AWUSBFEX soc=00001663(unknown) 00000001 ver=0001 44 08 scratchpad=00007e00 00000000 00000000
+```
+
+
+---
+
+# Using FEL Mode
+- The standard ```FEL``` tools do not have support for our chip ID
+- After searching through github using the chip ID [a fork of this repo](https://github.com/Icenowy/sunxi-tools/tree/f1c100s-spiflash) was found that supports our chip!
+- What can we **do** with these tools?
+
+---
+
+# Using FEL Mode
+
+```
+pi@voidstar:~/remove/projects/sf-cabinet/tools/sunxi-tools $ sudo ./sunxi-fel ver
+AWUSBFEX soc=00001663(F1C100s) 00000001 ver=0001 44 08 scratchpad=00007e00 00000000 00000000
+pi@voidstar:~/remove/projects/sf-cabinet/tools/sunxi-tools $ sudo ./sunxi-fel spiflash-info
+Manufacturer: Unknown (1Ch), model: 70h, size: 8388608 bytes.
+pi@voidstar:~/remove/projects/sf-cabinet/tools/sunxi-tools $ sudo ./sunxi-fel spiflash-read 0 0x800000 sf2.bin
+```
+
+---
+
+# FEL Mode: Conclusion
+- Using FEL mode we can now read and write the SPI flash over USB
+- This is much more efficient than using the clips
+- This method can also easily be employed by other people for their own testing!
+- We still need to answer the following:
+  - What OS/RTOS is in use?
+  - What filesystem is in use?
+
+---
+
+# Understanding the OS
+
+- Throughout our serial log we see multiple strings such as:
+  - ```esMODS_MInstall```  
+  - ```esDEV_Plugin```  
+  - ```EPOS_MEM_DBG```  
+  - ```L560(Esh_shell.c):Esh msg: shell main thread: Bye Bye!```  
+- After researching these debug logs, it appears that the OS in use is ePOS v1.0
+---
+
+# ePOS v1.0
+
+![bg right 90%](images/epos-architecture.png)
+- Not much information is available on ePOS v1.0
+  - https://epos.lisha.ufsc.br/EPOS+Overview
+  -  Embedded Parallel Operating System
+
+---
+
+# Understanding the Filesystem
+
+- Based on some strings in the binary, we see references to the following:
+  - ```MinFS```
+  - ```Fat16```
+- A ```Fat16``` header can be found in the image, but the corresponding image doesn't contain anything interesting
+- If we search MinFS, interesting table entries can be found
+
+---
+
+# MinFS Tables
+
+- At ROM offset 0x24400, we see the string ```MINFS```
+
+```
+2:4400h: 4D 49 4E 46 53 00 00 01 00 02 00 00 BC 01 00 00  MINFS.......¼... 
+2:4410h: 4E 00 00 00 88 16 00 00 18 A1 7B 00 00 BC 7B 00  N...ˆ....¡{..¼{. 
+```
+
+- What follows this entry is what appears to be a list of files
+
+---
+
+```
+2:4600h: BC 03 00 00 F4 02 00 00 00 00 00 00 18 00 01 00  ¼...ô........... 
+2:4610h: 04 00 00 00 61 70 70 73 00 1A 00 00 A0 1D 00 00  ....apps.... ... 
+2:4620h: A0 1D 00 00 24 00 00 00 0E 00 00 00 61 70 70 5F   ...$.......app_ 
+2:4630h: 63 6F 6E 66 69 67 2E 62 69 6E 00 00 A0 37 00 00  config.bin.. 7.. 
+2:4640h: 6A 14 00 00 6A 14 00 00 24 00 00 00 0E 00 00 00  j...j...$....... 
+2:4650h: 61 70 70 5F 63 6F 6E 66 69 67 2E 66 65 78 00 00  app_config.fex.. 
+2:4660h: 18 07 00 00 78 02 00 00 00 00 00 00 18 00 01 00  ....x........... 
+2:4670h: 03 00 00 00 64 72 76 00 0C 4C 00 00 48 C6 06 00  ....drv..L..HÆ.. 
+2:4680h: 48 C6 06 00 1C 00 00 00 08 00 00 00 65 70 6F 73  HÆ..........epos 
+2:4690h: 2E 69 6D 67 90 09 00 00 A0 00 00 00 00 00 00 00  .img ... ....... 
+2:46A0h: 18 00 01 00 04 00 00 00 67 61 6D 65 54 12 07 00  ........gameT... 
+2:46B0h: 50 00 00 00 50 00 00 00 24 00 00 00 0F 00 00 00  P...P...$....... 
+2:46C0h: 6B 65 79 5F 52 45 46 2D 4E 65 77 2E 64 61 74 00  key_REF-New.dat. 
+2:46D0h: A4 12 07 00 50 00 00 00 50 00 00 00 24 00 00 00  ¤...P...P...$... 
+2:46E0h: 0F 00 00 00 6B 65 79 5F 52 45 46 2D 6F 6C 64 2E  ....key_REF-old. 
+2:46F0h: 64 61 74 00 F4 12 07 00 50 00 00 00 50 00 00 00  dat.ô...P...P... 
+2:4700h: 20 00 00 00 0B 00 00 00 6B 65 79 5F 52 45 46 2E   .......key_REF. 
+2:4710h: 64 61 74 00 30 0A 00 00 7C 02 00 00 00 00 00 00  dat.0...|....... 
+2:4720h: 18 00 01 00 03 00 00 00 6D 6F 64 00 44 13 07 00  ........mod.D... 
+2:4730h: F2 0A 00 00 F2 0A 00 00 20 00 00 00 0B 00 00 00  ò...ò... ....... 
+2:4740h: 70 77 6D 5F 63 66 67 2E 69 6E 69 00 38 1E 07 00  pwm_cfg.ini.8... 
+2:4750h: 00 80 02 00 00 80 02 00 20 00 00 00 0B 00 00 00  .€...€.. ....... 
+
+```
 
 ---
 
