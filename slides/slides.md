@@ -1009,11 +1009,11 @@ pi@voidstar:~/remove/projects/sf-cabinet/tools/sunxi-tools $ sudo ./sunxi-fel sp
 ---
 
 ```
-2:4600h: BC 03 00 00 F4 02 00 00 00 00 00 00 18 00 01 00  ¼...ô........... 
-2:4610h: 04 00 00 00 61 70 70 73 00 1A 00 00 A0 1D 00 00  ....apps.... ... 
-2:4620h: A0 1D 00 00 24 00 00 00 0E 00 00 00 61 70 70 5F   ...$.......app_ 
-2:4630h: 63 6F 6E 66 69 67 2E 62 69 6E 00 00 A0 37 00 00  config.bin.. 7.. 
-2:4640h: 6A 14 00 00 6A 14 00 00 24 00 00 00 0E 00 00 00  j...j...$....... 
+2:4600h: bc 03 00 00 f4 02 00 00 00 00 00 00 18 00 01 00  ¼...ô........... 
+2:4610h: 04 00 00 00 61 70 70 73 00 1a 00 00 a0 1d 00 00  ....apps.... ... 
+2:4620h: a0 1d 00 00 24 00 00 00 0e 00 00 00 61 70 70 5f   ...$.......app_ 
+2:4630h: 63 6f 6e 66 69 67 2e 62 69 6e 00 00 a0 37 00 00  config.bin.. 7.. 
+2:4640h: 6a 14 00 00 6a 14 00 00 24 00 00 00 0e 00 00 00  j...j...$....... 
 2:4650h: 61 70 70 5F 63 6F 6E 66 69 67 2E 66 65 78 00 00  app_config.fex.. 
 2:4660h: 18 07 00 00 78 02 00 00 00 00 00 00 18 00 01 00  ....x........... 
 2:4670h: 03 00 00 00 64 72 76 00 0C 4C 00 00 48 C6 06 00  ....drv..L..HÆ.. 
@@ -1036,18 +1036,156 @@ pi@voidstar:~/remove/projects/sf-cabinet/tools/sunxi-tools $ sudo ./sunxi-fel sp
 
 ---
 
-# Parsing the MinFS Entries
+# Unknown Headers: Where to Start?
+
+- When looking at an unknown binary format, look for the following:
+  - Length fields (before strings etc)
+  - Size fields (of entire structure)
+  - Pointers / Offset values
+- Examining formats like this takes patience
+  - Look for a parser if possible
+  Google is your friend!
+
+---
+
+# Unknown Headers
+
+```
+2:4600h: bc 03 00 00 f4 02 00 00 00 00 00 00 18 00 01 00  ¼...ô........... 
+2:4610h: 04 00 00 00 61 70 70 73 00 1a 00 00 a0 1d 00 00  ....apps.... ... 
+2:4620h: a0 1d 00 00 24 00 00 00 0e 00 00 00 61 70 70 5f   ...$.......app_ 
+2:4630h: 63 6f 6e 66 69 67 2e 62 69 6e 00 00 a0 37 00 00  config.bin.. 7.. 
+2:4640h: 6a 14 00 00 6a 14 00 00 24 00 00 00 0e 00 00 00  j...j...$....... 
+
+```
+
+<p align=center>
+Here is a sample, consisting of multiple file entries
+</p>
+
+---
+
+# Unknown Headers
+
+```
+2:4600h: bc 03 00 00 f4 02 00 00 00 00 00 00 18 00 01 00  ¼...ô........... 
+2:4610h: [04] 00 00 00 61 70 70 73 00 1a 00 00 a0 1d 00 00  ....apps.... ... 
+2:4620h: a0 1d 00 00 24 00 00 00 [0e] 00 00 00 61 70 70 5f   ...$.......app_ 
+2:4630h: 63 6f 6e 66 69 67 2e 62 69 6e 00 00 a0 37 00 00  config.bin.. 7.. 
+2:4640h: 6a 14 00 00 6a 14 00 00 24 00 00 00 0e 00 00 00  j...j...$....... 
+
+```
+
+<p align=center>
+There is what appears to be a length field for the filename
+<br>
+<code>apps</code> is 4 bytes
+<br>
+<code>app_config.bin</code> is 0xE bytes
+</p>
+
+
+---
+
+# Unknown Headers
+
+```
+2:4600h: bc 03 00 00 f4 02 00 00 00 00 00 00 18 00 01 00  ¼...ô........... 
+2:4610h: 04 00 00 00 61 70 70 73 00 [1a] 00 00 a0 1d 00 00  ....apps.... ... 
+2:4620h: a0 1d 00 00 24 00 00 00 0e 00 00 00 61 70 70 5f   ...$.......app_ 
+2:4630h: 63 6f 6e 66 69 67 2e 62 69 6e 00 00 a0 37 00 00  config.bin.. 7.. 
+2:4640h: 6a 14 00 00 6a 14 00 00 24 00 00 00 0e 00 00 00  j...j...$....... 
+
+```
+
+<p align=center>
+0x1A is a likely the candidate for a field representing the total length
+</p>
+
+---
+
+
 
 ---
 
 # Kaitai Struct
 
+![bg right 75%](images/kaitai.png)
+
+- [Kaitai Struct](https://kaitai.io/) is a binary format analysis tool
+  - Declarative language used to define binaru structures
+- Free and open source
+
 ---
 
-# Kaitai Struct: Data Types
+# Kaitai Struct
+
+- Binary formats are defined with a ```.ksy``` file
+- Kaitai includes a visualizer to debug your format
+- ```.ksy``` files can then be compiled into a language source file
+  - Python
+  - Javascript
+  - C#
+- Automatically generates classes for parsing your defined data
+
+---
+
+# Kaitai Struct: Example ```.ksy``` file
+
+<style scoped>
+  pre {
+    font-size: 16px;
+  }
+  </style>
+```
+meta:
+  id: gif
+  endian: le
+seq:
+  - id: header
+    type: header
+  - id: logical_screen
+    type: logical_screen
+types:
+  header:
+    seq:
+      - id: magic
+        contents: 'GIF'
+      - id: version
+        size: 3
+  logical_screen:
+    seq:
+      - id: image_width
+        type: u2
+      - id: image_height
+        type: u2
+      - id: flags
+        type: u1
+      - id: bg_color_index
+        type: u1
+      - id: pixel_aspect_ratio
+        type: u1
+```
 
 ---
 
 # Kaitai Struct: Writing a Template
+
+---
+
+# Kaitai Struct: ```.ksy``` Data types
+
+---
+
+# Kaitai Struct: ```.ksy``` classes
+
+---
+
+# Kaitai Struct: ```.ksy``` Enums
+
+---
+
+
+---
 
 ---
